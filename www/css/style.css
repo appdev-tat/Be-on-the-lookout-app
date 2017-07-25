@@ -122,7 +122,7 @@ body, .ionic-body {
 }
 
 ion-nav-view ion-content {
-    background: url(../img/blue_man_faded.png) center bottom no-repeat white;
+    background: url(../img/bus_icon.png) center bottom no-repeat white;
     background-size: contain;
 }
 

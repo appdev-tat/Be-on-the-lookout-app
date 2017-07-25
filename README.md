@@ -96,8 +96,11 @@ After building the app, scan the QR code on the PhoneGap webpage.
 
 After building the app using the ad hoc key, you may be able to just scan the QR code using a device which is approved in the provisioning profile. If this doesn't work, download the .ipa and go to [Diawi](https://www.diawi.com/) and follow the instructions.
 
+
 ## Other things to note
 
 I think Ionic has a built-in way to generate all the necessary icon sizes automatically, but I used [http://pgicons.abiro.com/](http://pgicons.abiro.com/). If you need to make changes to the app icon, use this tool to generate files that match the filenames of the current icons.
 
 When you deploy changes, you should merge those changes into the `master-ios` branch as well. The only difference between `master` and `master-ios` should be the `config.xml` file.
+
+App icon from https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Bus_stop_symbol.svg/2000px-Bus_stop_symbol.svg.png
