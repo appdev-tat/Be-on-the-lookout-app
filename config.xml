@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="sherprog.walletcards.botl" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="org.truckersagainsttrafficking.busingonthelookout.walletcard" version="1.0.0">
   <name>Busing on the Lookout</name>
   <description>Make the call, save lives. Use this simple app to help you identify and report instances of human trafficking.</description>
   <author href="http://www.truckersagainsttrafficking.org/bus-training/" email="appdev@truckersagainsttrafficking.org">Truckers Against Trafficking</author>
