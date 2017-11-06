@@ -8,7 +8,9 @@ angular.module('starter.controllers', [])
   $scope.openExternalLink = openExternalLink;
 })
 
-.controller('RedFlagsCtrl', function($scope) {})
+.controller('RedFlagsCtrl', function($scope) {
+  $scope.openExternalLink = openExternalLink;
+})
 
 .controller('AboutTraffickingCtrl', function($scope) {})
 
