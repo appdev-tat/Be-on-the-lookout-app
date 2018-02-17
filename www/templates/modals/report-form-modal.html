@@ -1,0 +1,85 @@
+
+<ion-modal-view class="modal-wide">
+    <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Build a report</h1>
+    <button class="button button-clear" ng-click="reportFormModal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div>
+            <p>For law enforcement to open an investigation on your tip, they need key pieces of information. Record what you know about the incident.</p>
+            
+            <form class="list">
+                <!-- red flags -->
+                <ion-checkbox ng-model="form.contactedVictim">Have you come into contact with someone you suspect is a victim?</ion-checkbox>
+                <fieldset class="subform" ng-if="form.contactedVictim">
+                    <label class="item item-input item-select">
+                        <div class="input-label">Victim's gender:</div>
+                        <select ng-model="form.victimDetails.gender">
+                            <option value="Unknown">Unknown</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <p style="padding-top:10px;padding-right:10px">Check the red flags that apply:</p>
+                    <ion-checkbox ng-model="form.victimDetails.hasRestrictedCommunication">The victim has restricted or controlled communication&mdash; not allowed to speak for self</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.isDisheveled">The victim has a disheveled or unkempt appearance, is alone, scared, or crying</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.isMinor">The victim is a minor traveling without adult supervision</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.offersSex">The victim offers to exchange sex for a ride, meal, etc.</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.doesNotKnow">The victim does not know the person who is picking him/her up</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.hasPimp">The victim shows any acknowledgement that she/he has a pimp and is making a quota</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.hasBranding">The victim has signs of branding or tattooing of the trafficker's name (often on the neck)</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.hasLackOfKnowledge">The victim has a lack of knowledge of the community or his/her whereabouts</ion-checkbox>
+                    <ion-checkbox ng-model="form.victimDetails.hasNoId">The victim is not in control of his/her own identification documents (ID/passport)</ion-checkbox>
+                    <label class="item item-input">
+                        <textarea placeholder="Enter other notes here" ng-model="form.victimDetails.other"></textarea>
+                    </label>
+                </fieldset>
+        
+                <!-- people -->
+                <ion-checkbox ng-model="form.people">Do you see any people (other than victims) involved in the suspicious activity?</ion-checkbox>
+                <fieldset class="subform" ng-if="form.people">
+                <p style="padding-top:10px;padding-right:10px">For all people involved, record height, weight, ethnicity, hair color, eye color, age, etc.</p>
+                <label class="item item-input">
+                    <textarea placeholder="Enter details about people here" ng-model="form.peopleDetails"></textarea>
+                </label>
+                </fieldset>
+                
+                <!-- cars -->
+                <ion-checkbox ng-model="form.cars">Are there any cars involved in the suspicious activity?</ion-checkbox>
+                <fieldset class="subform" ng-if="form.cars">
+                <p style="padding-top:10px;padding-right:10px">For all cars involved, record make, model, color, license plate, etc.</p>
+                <label class="item item-input">
+                    <textarea placeholder="Enter details about cars here" ng-model="form.carsDetails"></textarea>
+                </label>
+                </fieldset>
+        
+        
+                <!-- time -->
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">What day did the suspicious activity happen?</span><br>
+                    <input type="date" ng-model="form.date">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">What time did the suspicious activity happen?</span>
+                    <input type="time" ng-model="form.time">
+                </label>
+        
+                <!-- place -->
+                <div class="item item-input item-stacked-label">
+                    <span class="input-label">Where did the suspicious activity take place?</span>
+                    <p><button type="button" class="button button-dark" ng-click="automaticallyGetLocation()">Get my location for me</button></p>
+                    <textarea placeholder="Enter your location here" ng-model="form.location" style="height:4em;background:none"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The button below will open up your email program. Please attach photos to the email if possible.</p>
+                        <a class="button button-block button-positive" ng-click="buildReportEmail()"><i class="icon ion-ios-email"></i> Send your report via email to<br>help@humantraffickinghotline.org</a>
+                        <p><a class="button button-clear button-assertive" ng-click="resetReportForm()">Reset the form</a></p>
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

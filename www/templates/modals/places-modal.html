@@ -1,0 +1,15 @@
+
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Choose your location</h1>
+    <button class="button button-clear button-primary" ng-click="placesModal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div style="padding-bottom:10px">
+            <p ng-if="places.length == 0">Loading...</p>
+            <ion-list ng-if="places.length > 0">
+                <ion-radio ng-repeat="place in places" ng-click="onPlaceClick(place)">{{place.name}}</ion-radio>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-modal-view>

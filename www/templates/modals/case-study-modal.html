@@ -1,0 +1,45 @@
+
+<ion-modal-view class="modal-wide">
+    <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Case study</h1>
+    <button class="button button-clear" ng-click="caseStudyModal.hide()">Close</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div>
+            <div ng-if="caseTag == 'restricted'">
+                <p>...A law enforcement officer in New York was called to the scene by a bus driver who was concerned for the welfare of two teenage girls who were in a restricted area of the bus terminal. The girls, who looked dirty and disheveled, had supposedly been begging for a free trip to Pennsylvania...</p>
+                <p><button class="button button-clear button-positive" ng-click="showCaseStudy('fullStudyA')">Read the rest of this case study</button></p>
+            </div>
+
+            <div ng-if="caseTag == 'minor'">
+                <p>Sergeant Hector Martinez and Officer Jack Collins with the Port Authority Police Department, shared by New York and New Jersey, walk New York City's cavernous bus depot, where an estimated 225,000 people pass through each day. In the past year, Martinez and Collins said their unit, the Port Authority Youth Division, recovered 69 runaways, about one to three per week.</p>
+                <p>&ldquo;Pimps, recruiters, they sit here, they watch,&rdquo; Martinez said, referring to the Greyhound ticket counter. &ldquo;They watch as they go in and they purchase the tickets there.&rdquo;</p>
+                <p>&ldquo;They sell [youth] the idea of a warm place to stay for the night, the possibility, potential for romance, maybe earning some money,&rdquo; Collins added.</p>
+                <p><a ng-click="openExternalLink('http://abcnews.go.com/US/lured-off-streets-young-women-sex-trafficking-victims/story?id=28428792')">(Source: ABC News)</a></p>
+            </div>
+
+            <div ng-if="caseTag == 'offers'">
+                <p>...When the officer arrived on the scene, that same bus driver drew him aside and told him that the girls had offered at least one driver sex in exchange for a ride to PA...</p>
+                <p><button class="button button-clear button-positive" ng-click="showCaseStudy('fullStudyA')">Read the rest of this case study</button></p>
+            </div>
+
+            <div ng-if="caseTag == 'fullStudyA'">
+                <p>The following case study comes from a NY law enforcement officer.</p>
+                <p>The officer was called to the scene by a bus driver who was concerned for the welfare of two girls who were in a restricted area of the bus terminal, supposedly begging for a free trip to Pennsylvania.</p>
+                <p>When the officer arrived on the scene, that same bus driver drew him aside and told him that the girls had offered at least one driver sex in exchange for a ride to PA.</p>
+                <p>The girls looked like they had been living on the street for awhile...dirty and disheveled.</p>
+                <p>The officer took them back to his office and learned, by speaking with the girls' grandmother, that one girl was 19 and had a severe learning disability, and that the other had turned 18 only a month before.</p>
+                <p>The grandmother begged for mercy for the girls and told the officer that both girls were victims of horrible sex abuse early in their lives and that an uncle had forced them into prostitution.</p>
+                <p>As the officer fed them pizza, the older girl explained that her boyfriend's mother had thrown them out of the house they lived and worked in. It turned out that house was a massage parlor in which they provided sexual services.</p>
+                <p>They had been kicked out of the house because the older girl's boyfriend had begun to sleep with a 15 year old girl brought up from South America.</p>
+                <p>When the older sister complained about this, because she believed she was in a real, honest to goodness romantic relationship with this pimp, the mother threw both sisters out of the brothel to &ldquo;teach them a lesson,&rdquo; and so that they &ldquo;knew their place.&rdquo;</p>
+                <p>The girls also told the officer that the mother who owned and operated the massage parlor brothel had decided to keep all of their belongings.</p>
+                <p>The officer proceeded to call the mother and recorded a conversation between the three of them wherein the brothel owner told them they could only have their stuff back for $400 and described the sexual services they could perform to earn the money and buy back their own property.</p>
+                <p>After the phone call, the older girl also told the officer that there was a police detective who was providing protection for the brothel in exchange for sexual services.</p>
+                <p>The taped conversation and information was promptly forwarded over to internal affairs, and the officer got the girls on a bus back to their grandmother.</p>
+                <p>At the end of the day, the mother and son trafficking team was arrested, the victims who worked there under duress...several of whom were underage, were recovered, and the corrupt police detective no longer wears a badge.</p>
+                <p>This is a tremendous example of how a professional driver, who could have walked right past these young women without a second thought, chose to get involved because he saw something that bothered him.</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

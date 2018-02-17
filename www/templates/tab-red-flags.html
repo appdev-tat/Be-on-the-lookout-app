@@ -1,38 +1,46 @@
 <ion-view view-title="Trafficking red flags to look for">
-  <ion-content class="padding">
+    <ion-content class="padding">
 
-    <h3 class="page-title">Red-flag indicators</h3>
+        <h3 class="page-title">Red-flag indicators</h3>
 
-    <div class="row responsive-sm">
-      <div class="col padding">
-        <p><em>Somebody may be a current victim of human trafficking if he/she:</em></p>
-        <ul class="reg-ul">
-          <li>has restricted or controlled communication&mdash; not allowed to speak for self</li>
-          <li>has a disheveled or unkempt appearance, is alone, scared, or crying</li>
-          <li>is a minor traveling without adult supervision</li>
-          <li>offers to exchange sex for a ride, meal, etc.</li>
-          <li>does not know the person who is picking him/her up</li>
-          <li>shows any acknowledgement that she/he has a pimp and is making a quota</li>
-          <li>has signs of branding or tattooing of the trafficker's name (often on the neck)</li>
+        <div class="row responsive-sm">
+            <div class="col padding">
+                <p><em>Somebody may be a current victim of human trafficking if he/she:</em></p>
+                <ul class="reg-ul">
+                    <li>
+                        has restricted or controlled communication&mdash; not allowed to speak for self<br>
+                        <a class="button button-clear button-positive" ng-click="showCaseStudy('restricted')">Show case study</a>
+                    </li>
+                    <li>has a disheveled or unkempt appearance, is alone, scared, or crying</li>
+                    <li>
+                        is a minor traveling without adult supervision<br>
+                        <a class="button button-clear button-positive" ng-click="showCaseStudy('minor')">Show case study</a>
+                    </li>
+                    <li>
+                        offers to exchange sex for a ride, meal, etc.<br>
+                        <a class="button button-clear button-positive" ng-click="showCaseStudy('offers')">Show case study</a>
+                    </li>
+                    <li>does not know the person who is picking him/her up</li>
+                    <li>shows any acknowledgement that she/he has a pimp and is making a quota</li>
+                    <li>has signs of branding or tattooing of the trafficker's name (often on the neck)</li>
+                    <li>has a lack of knowledge of the community or his/her whereabouts</li>
+                    <li>is not in control of his/her own identification documents (ID/passport)</li>
+                </ul>
+            </div>
 
-          <li>has a lack of knowledge of the community or his/her whereabouts</li>
-          <li>is not in control of his/her own identification documents (ID/passport)</li>
-        </ul>
-      </div>
+            <div class="col padding">
+                <p><em>If you suspect someone is a victim of human trafficking, here are some questions to ask him/her:</em></p>
+                <ul class="reg-ul">
+                    <li>Do you know the person who is picking you up?</li>
+                    <li>Do you feel safe with the person you're traveling with?</li>
+                    <li>Do your parents/siblings/relatives know where you are? If not, why not?</li>
+                    <li>Are you free to come and go as you please?</li>
+                    <li>Are you or your family being threatened? What is the nature of the threats?</li>
+                </ul>
+            </div>
+        </div>
 
-      <div class="col padding">
-        <p><em>If you suspect someone is a victim of human trafficking, here are some questions to ask him/her:</em></p>
-        <ul class="reg-ul">
-          <li>Do you know the person who is picking you up?</li>
-          <li>Do you feel safe with the person you're traveling with?</li>
-          <li>Do your parents/siblings/relatives know where you are? If not, why not?</li>
-          <li>Are you free to come and go as you please?</li>
-          <li>Are you or your family being threatened? What is the nature of the threats?</li>
-        </ul>
-      </div>
-    </div>
+        <p>Watch our <a ng-click="openExternalLink('https://vimeo.com/207827662')">free on-demand training</a> to learn more.</p>
 
-    <p>Watch our <a ng-click="openExternalLink('https://vimeo.com/207827662')">free on-demand training</a> to learn more.</p>
-
-  </ion-content>
+    </ion-content>
 </ion-view>

@@ -143,9 +143,9 @@ ion-content.has-header.has-tabs-top {
 .platform-ios ion-content.has-header {
     top: 23px !important;
 }
-.title {
-    display: none !important;
-}
+.title { display: none !important }
+.modal .title { display: block !important }
+
 
 h3.page-title, h3.section-title {
     text-align: center;
@@ -190,10 +190,15 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 
 
-.actionable-info .col {
+.actionable-info .col,
+.note-area-wrapper {
     border-radius: 6px;
     border: 1px solid #aaa;
     margin: 1em;
+}
+.note-area-wrapper {
+    margin: 0;
+    padding: 0.5em;
 }
 
 .main-buttons-spacer {
@@ -206,8 +211,46 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     flex: 0;
 }
 
+.item {
+    background: none;
+    border-color: #999;
+}
+textarea {
+    background: none;
+    height: 10em;
+}
+input,
+.item-stacked-label input {
+    background: none;
+}
+.item-content { white-space: normal }
+form {
+    width: calc( 100% + 20px );
+    margin-left: -10px;
+}
+fieldset.subform {
+    margin: 0 -1px 0 15px;
+    padding: 0;
+    border-color: transparent;
+    border-left-color: #999;
+}
+fieldset.subform > p {
+    padding-left: 10px;
+}
+
 /* Hide last tab */
 .tab-nav .tab-item:last-child { display: none }
+
+@media ( min-width: 680px ) {
+    .modal-wide {
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+    }
+}
 
 @media (max-width: 567px) {
     .responsive-sm .main-buttons-spacer {
