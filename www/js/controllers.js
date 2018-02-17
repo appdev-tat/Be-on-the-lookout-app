@@ -62,10 +62,23 @@ angular.module('starter.controllers', [])
         'templates/modals/report-form-modal.html', { scope: $scope }
     ).then( function(modal) {
         $scope.reportFormModal = modal;
+        document.query
     });
 
+    $scope.fixedFormBlur = false;
     $scope.showReportForm = function() {
-        $scope.reportFormModal.show();
+        $scope.reportFormModal.show().then( function() {
+            // textarea elements don't blur when other form elements are clicked.
+            // This is terrible and can easily be fixed.
+            if ( !$scope.fixedFormBlur ) {
+                $scope.fixedFormBlur = true;
+                document.querySelectorAll( 'ion-modal-view label' ).forEach( function(label) {
+                    label.addEventListener( 'click', function(e) {
+                        document.activeElement.blur();
+                    });
+                });
+            }
+        });
     };
 
     $scope.places = [];
