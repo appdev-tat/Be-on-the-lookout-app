@@ -1,7 +1,18 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, $ionicModal) {
     $scope.openExternalLink = openExternalLink;
+
+    // set up the two modals
+    $ionicModal.fromTemplateUrl(
+        'templates/modals/about-modal.html', { scope: $scope }
+    ).then( function(modal) {
+        $scope.aboutModal = modal;
+    });
+
+    $scope.openAboutModal = function() {
+        $scope.aboutModal.show();
+    };
 })
 
 .controller('ReportCtrl', function( $scope, $ionicModal ) {
@@ -14,7 +25,7 @@ angular.module('starter.controllers', [])
     $scope.resetReportForm = function( requireConfirmation ) {
         if ( requireConfirmation === undefined ) requireConfirmation = true;
         if ( requireConfirmation ) {
-            navigator.notification.confirm( 'Are you sure you want to reset the form?', function( buttonIndex ) {
+            navigator.notification.confirm( 'Are you sure you want to reset the form and clear all inputs?', function( buttonIndex ) {
                 // 0 == dismissed (clicked outside), 1 == 'Yes', 2 == 'No'
                 if ( buttonIndex === 1 ) {
                     clearForm();
@@ -76,6 +87,9 @@ angular.module('starter.controllers', [])
                     label.addEventListener( 'click', function(e) {
                         document.activeElement.blur();
                     });
+                    /*label.addEventListener( 'touchend', function() {
+                        document.activeElement.blur();
+                    });*/
                 });
             }
         });
@@ -241,10 +255,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AboutTraffickingCtrl', function($scope) {})
-
-.controller('AboutAppCtrl', function($scope) {
-    $scope.openExternalLink = openExternalLink;
-})
 
 // for some reason I couldn't get the app to trigger mailto: and tel: links properly
 // using the href attribute, so instead I open the link using window.open

@@ -1,5 +1,5 @@
-<ion-view view-title="Truckers Against Trafficking">
-  <ion-content class="padding" style="padding-top:0 !important">
+<ion-view hide-nav-bar="true">
+  <ion-content class="padding">
     <div class="main-top clearfix">
       <div class="main-half">
         <img class="main-image" src="img/bus_logo.png">
@@ -35,7 +35,7 @@
     </ul>
     <p>For more information, go to <a ng-click="openExternalLink('http://www.truckersagainsttrafficking.org/bus-training/')">http://www.truckersagainsttrafficking.org/bus-training/</a>.</p>
     <p>Watch our <a ng-click="openExternalLink('https://vimeo.com/207827662')">free on-demand training</a>.</p>
-    <p><a class="button" ng-href="#/tab/about-app" style="border-color:#bbb">About this app</a></p>
+    <p><button class="button button-outline button-positive" ng-click="openAboutModal()">About this app</button></p>
 
   </ion-content>
 </ion-view>

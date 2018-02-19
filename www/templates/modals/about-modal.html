@@ -1,10 +1,12 @@
-<ion-view view-title="About this app">
-  <ion-content class="padding">
 
-    <h3 class="page-title">About this app</h3>
+<ion-modal-view class="modal-wide">
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">About this app</h1>
+    <button class="button button-clear" ng-click="aboutModal.hide()">Close</button>
+  </ion-header-bar>
+  <ion-content class="padding">
     <p class="padding">Developed by Ransom Christofferson</p>
     <p class="padding">Published by <a ng-click="openExternalLink('http://sherprog.com/')">Sheridan Programmers Guild</a></p>
     <p class="padding">For support, contact <a ng-click="openExternalLink('mailto:info@truckersagainsttrafficking.org')">info@truckersagainsttrafficking.org</a></p>
-    
   </ion-content>
-</ion-view>
+</ion-modal-view>

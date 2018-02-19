@@ -68,14 +68,14 @@
                 <!-- place -->
                 <div class="item item-input item-stacked-label">
                     <span class="input-label">Where did the suspicious activity take place?</span>
-                    <p><button type="button" class="button button-dark" ng-click="automaticallyGetLocation()">Get my location for me</button></p>
                     <textarea placeholder="Enter your location here" ng-model="form.location" style="height:4em;background:none"></textarea>
+                    <button type="button" class="button button-outline button-positive" ng-click="automaticallyGetLocation()">Get my location for me</button>
                 </div>
                 <div class="row">
                     <div class="col">
                         <p>The button below will open up your email program. Please attach photos to the email if possible.</p>
                         <a class="button button-block button-positive" ng-click="buildReportEmail()"><i class="icon ion-ios-email"></i> Send your report via email to<br>help@humantraffickinghotline.org</a>
-                        <p><a class="button button-clear button-assertive" ng-click="resetReportForm()">Reset the form</a></p>
+                        <p><button class="button button-outline button-assertive" ng-click="resetReportForm()">Reset the form</button></p>
                     </div>
                 </div>
         

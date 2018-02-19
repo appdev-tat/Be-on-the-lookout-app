@@ -107,16 +107,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'AboutTraffickingCtrl'
       }
     }
-  })
-  
-  .state('tab.about-app', {
-    url: '/about-app',
-    views: {
-      'tab-about-app': {
-        templateUrl: 'templates/tab-about-app.html',
-        controller: 'AboutAppCtrl'
-      }
-    }
   });
 
   // if none of the above states are matched, use this as the fallback

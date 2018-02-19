@@ -56,6 +56,9 @@ p, li {
 }
 
 
+.platform-ios ion-nav-view {
+    border-top: 10px solid #eee;
+}
 
 .main-image {
     width: 100%;
@@ -78,10 +81,6 @@ p, li {
     padding: 1em 0.5em 0;
     border-bottom: 1px solid #666;
     display: flex;
-}
-
-ion-content {
-    padding-top: 1em !important;
 }
 
 .warning-bar {
@@ -126,40 +125,6 @@ ion-nav-view ion-content {
     background-size: contain;
 }
 
-.nav-bar-tabs-top {
-    display: none;
-}
-.tabs-top > .tabs {
-    top: 2px !important;
-}
-ion-content.has-header.has-tabs-top {
-    top: 52px !important;
-}
-
-/* adjustment for smaller header */
-.platform-ios ion-header-bar {
-    height: 23px !important;
-}
-.platform-ios ion-content.has-header {
-    top: 23px !important;
-}
-.title { display: none !important }
-.modal .title { display: block !important }
-
-
-h3.page-title, h3.section-title {
-    text-align: center;
-    background: #555;
-    color: white;
-    padding: 0.25em;
-    font-weight: 300;
-}
-h3.page-title {
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -14px !important;
-}
-/* */
 
 /* color override */
 a {
