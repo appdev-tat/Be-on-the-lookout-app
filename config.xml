@@ -8,6 +8,8 @@
 
   <feature name="http://api.phonegap.com/1.0/geolocation"/>
   <feature name="http://api.phonegap.com/1.0/network"/>
+  <preference name="http://api.phonegap.com/1.0/geolocation"/>
+  <preference name="http://api.phonegap.com/1.0/network"/>
 
   <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0"/>
   <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2"/>
