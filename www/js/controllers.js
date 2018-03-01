@@ -110,17 +110,36 @@ angular.module('starter.controllers', [])
 
         // check if the google script has already loaded
         if ( typeof google === 'undefined' ) {
-            // inject the google places script
-            var script = document.createElement( 'script' );
-            script.onload = findNearestLocation;
-            script.onerror = function( e ) {
-                closeModalError( 'Could not load nearby locations: ' + e );
-            };
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ7lYvhZz09KD1KJK7x1X1PB7Z5t6LuNU&libraries=places';
-            document.body.appendChild( script );
+            var permissions = cordova.plugins.permissions;
+            permissions.hasPermission( permissions.INTERNET, function( status ) {
+                if ( status.hasPermission ) {
+                    loadGoogleScript();
+                } else {
+                    permissions.requestPermission( permissions.INTERNET, function(status) {
+                        // success
+                        if ( status.hasPermission ) loadGoogleScript();
+                        else closeModalError( 'You must give the app permissions to access the internet.' );
+                    }, function() {
+                        // fail
+                        closeModalError( 'You must give the app permissions to access the internet.' );
+                    });
+                }
+            });
+            
         } else {
             findNearestLocation();
         }
+    }
+
+    function loadGoogleScript() {
+        // inject the google places script
+        var script = document.createElement( 'script' );
+        script.onload = findNearestLocation;
+        script.onerror = function( e ) {
+            closeModalError( 'Could not load nearby locations.' );
+        };
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ7lYvhZz09KD1KJK7x1X1PB7Z5t6LuNU&libraries=places';
+        document.body.appendChild( script );
     }
 
     var Map, service;
