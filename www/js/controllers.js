@@ -114,7 +114,7 @@ angular.module('starter.controllers', [])
             var script = document.createElement( 'script' );
             script.onload = findNearestLocation;
             script.onerror = function( e ) {
-                closeModalError( 'Could not load nearby locations: ' + e.message );
+                closeModalError( 'Could not load nearby locations: ' + e );
             };
             script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ7lYvhZz09KD1KJK7x1X1PB7Z5t6LuNU&libraries=places';
             document.body.appendChild( script );

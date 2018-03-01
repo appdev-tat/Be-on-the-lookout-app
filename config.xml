@@ -63,6 +63,7 @@
   <access origin="*"/>
   <access origin="mailto:*" launch-external="yes" />
   <access origin="tel:*" launch-external="yes" />
+  <allow-navigation href="*" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
