@@ -11,13 +11,11 @@
   <preference name="http://api.phonegap.com/1.0/geolocation"/>
   <preference name="http://api.phonegap.com/1.0/network"/>
 
-  <engine name="android" spec="https://github.com/apache/cordova-android.git#6.3.0" />
-
   <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.1"/>
   <plugin name="cordova-plugin-console" source="npm" spec="~1.1.0"/>
   <plugin name="cordova-plugin-splashscreen" source="npm" spec="~5.0.2"/>
   <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~2.0.2"/>
-  <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.0.1" />
+  <plugin name="cordova-plugin-geolocation" source="npm" spec="~3.0.0" />
   <plugin name="cordova-plugin-network-information" source="npm" spec="~2.0.1" />
   <icon src="icon.png"/>
   <platform name="android">
