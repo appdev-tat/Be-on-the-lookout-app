@@ -37,18 +37,18 @@
                 </fieldset>
         
                 <!-- people -->
-                <ion-checkbox ng-model="form.people">Do you see any people (other than victims) involved in the suspicious activity?</ion-checkbox>
+                <ion-checkbox ng-model="form.people">Do you see any other people (buyer or traffickers, other) involved in the suspicious activity?</ion-checkbox>
                 <fieldset class="subform" ng-if="form.people">
-                <p style="padding-top:10px;padding-right:10px">For all people involved, record height, weight, ethnicity, hair color, eye color, age, etc.</p>
+                <p style="padding-top:10px;padding-right:10px">Describe what makes them suspicious and record their height, weight, ethnicity, hair color, eye color, age, etc.</p>
                 <label class="item item-input">
                     <textarea placeholder="Enter details about people here" ng-model="form.peopleDetails"></textarea>
                 </label>
                 </fieldset>
                 
                 <!-- cars -->
-                <ion-checkbox ng-model="form.cars">Are there any cars involved in the suspicious activity?</ion-checkbox>
+                <ion-checkbox ng-model="form.cars">Are there any vehicles involved in the suspicious activity?</ion-checkbox>
                 <fieldset class="subform" ng-if="form.cars">
-                <p style="padding-top:10px;padding-right:10px">For all cars involved, record make, model, color, license plate, etc.</p>
+                <p style="padding-top:10px;padding-right:10px">For all vehicles involved, record how they're involved and the make, model, color, license plate, etc.</p>
                 <label class="item item-input">
                     <textarea placeholder="Enter details about cars here" ng-model="form.carsDetails"></textarea>
                 </label>
@@ -71,10 +71,24 @@
                     <textarea placeholder="Enter your location here" ng-model="form.location" style="height:4em;background:none"></textarea>
                     <button type="button" class="button button-outline button-positive" ng-click="automaticallyGetLocation()">Get my location for me</button>
                 </div>
+
+                <!-- additional info -->
+                <div class="item item-input item-stacked-label">
+                    <span class="input-label">Additional information about the suspicious situation:</span>
+                    <textarea placeholder="Enter additional info" ng-model="form.additional" style="height:6em"></textarea>
+                </div>
+
+                <!-- phone -->
+                <div class="item item-input item-stacked-label">
+                    <span class="input-label">Your phone number, for follow up from the hotline:</span>
+                    <input type="tel" placeholder="Phone number" ng-model="form.phone">
+                </div>
+
+                <!-- end -->
                 <div class="row">
                     <div class="col">
-                        <p>The button below will open up your email program. Please attach photos to the email if possible.</p>
-                        <a class="button button-block button-positive" ng-click="buildReportEmail()"><i class="icon ion-ios-email"></i> Send your report via email to<br>help@humantraffickinghotline.org</a>
+                        <p>The button below will open up your email program. Attach photos to your email if you have any.</p>
+                        <a class="button button-block button-positive" ng-click="buildReportEmail()" style="padding:0.5em 12px; font-size:120%"><i class="icon ion-ios-email"></i> Send your report via email to<br>help@humantraffickinghotline.org</a>
                         <p><button class="button button-outline button-assertive" ng-click="resetReportForm()">Reset the form</button></p>
                     </div>
                 </div>

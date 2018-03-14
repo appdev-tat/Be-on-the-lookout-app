@@ -54,7 +54,9 @@ angular.module('starter.controllers', [])
                 peopleDetails: '',
                 date: now,
                 time: now,
-                location: ''
+                location: '',
+                additional: '',
+                phone: ''
             };
         }
     };
@@ -231,8 +233,13 @@ angular.module('starter.controllers', [])
         }
 
         if ( $scope.form.cars ) {
-            body += "\nCars were involved.\n";
+            body += "\Vehicles were involved.\n";
             body += $scope.form.carsDetails + "\n";
+        }
+
+        if ( $scope.form.additional ) {
+            body += "\nAdditional information:\n";
+            body += $scope.form.additional + "\n";
         }
 
         body += "\nThe suspicious activity happened on " +
