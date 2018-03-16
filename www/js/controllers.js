@@ -112,6 +112,13 @@ angular.module('starter.controllers', [])
 
         // check if the google script has already loaded
         if ( typeof google === 'undefined' ) {
+            if ( cordova.plugins.permissions === undefined ) {
+                cordova.plugins.permissions = {
+                    hasPermission: function(perm, cb) {
+                        cb( {hasPermission: true} );
+                    }
+                };
+            }
             var permissions = cordova.plugins.permissions;
             permissions.hasPermission( permissions.INTERNET, function( status ) {
                 if ( status.hasPermission ) {
