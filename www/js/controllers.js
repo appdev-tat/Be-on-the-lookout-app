@@ -101,9 +101,14 @@ angular.module('starter.controllers', [])
 
     $scope.automaticallyGetLocation = function() {
         // check internet connection state
-        if ( navigator.connection.type === Connection.NONE ) {
-            navigator.notification.alert( 'You must be connected to the internet to use this feature.', function(){}, '' );
-            return;
+        try {
+            if ( navigator.connection.type === Connection.NONE ) {
+                navigator.notification.alert( 'You must be connected to the internet to use this feature.', function(){}, '' );
+                return;
+            }
+        } catch (e) {
+            navigator.notification.alert( 'Notice: You must be connected to the internet to use this feature.', function(){}, '' );
+            // continue anyway.
         }
 
         $scope.places = [];
@@ -113,27 +118,24 @@ angular.module('starter.controllers', [])
         // check if the google script has already loaded
         if ( typeof google === 'undefined' ) {
             if ( cordova.plugins.permissions === undefined ) {
-                cordova.plugins.permissions = {
-                    hasPermission: function(perm, cb) {
-                        cb( {hasPermission: true} );
+                loadGoogleScript();
+            } else {
+                var permissions = cordova.plugins.permissions;
+                permissions.hasPermission( permissions.INTERNET, function( status ) {
+                    if ( status.hasPermission ) {
+                        loadGoogleScript();
+                    } else {
+                        permissions.requestPermission( permissions.INTERNET, function(status) {
+                            // success
+                            if ( status.hasPermission ) loadGoogleScript();
+                            else closeModalError( 'You must give the app permissions to access the internet.' );
+                        }, function() {
+                            // fail
+                            closeModalError( 'You must give the app permissions to access the internet.' );
+                        });
                     }
-                };
+                });
             }
-            var permissions = cordova.plugins.permissions;
-            permissions.hasPermission( permissions.INTERNET, function( status ) {
-                if ( status.hasPermission ) {
-                    loadGoogleScript();
-                } else {
-                    permissions.requestPermission( permissions.INTERNET, function(status) {
-                        // success
-                        if ( status.hasPermission ) loadGoogleScript();
-                        else closeModalError( 'You must give the app permissions to access the internet.' );
-                    }, function() {
-                        // fail
-                        closeModalError( 'You must give the app permissions to access the internet.' );
-                    });
-                }
-            });
             
         } else {
             findNearestLocation();
