@@ -41,6 +41,7 @@ angular.module('starter.controllers', [])
                 contactedVictim: false,
                 victimDetails: {
                     gender: 'Unknown',
+                    appearance: '',
                     lackOfKnowledge: false,
                     restrictedCommunication: false,
                     noIdentification: false,
@@ -223,6 +224,7 @@ angular.module('starter.controllers', [])
             body += "I've come into contact with a victim.\n";
             var d = $scope.form.victimDetails;
             body += "Victim's gender: " + d.gender + "\n";
+            body += "Victim's appearance: " + d.appearance + "\n";
             body += "The victim: \n";
             if ( d.hasRestrictedCommunication ) body += "* has restricted or controlled communication.\n";
             if ( d.isDisheveled ) body += "* has a disheveled or unkempt appearance, is alone, scared, or crying\n";
