@@ -102,6 +102,8 @@ angular.module('starter.controllers', [])
 
     $scope.automaticallyGetLocation = function() {
         // check internet connection state
+        navigator.notification.alert( '1: ' + typeof navigator + ' ' + typeof navigator.connection, function(){}, '' );//@@
+        navigator.notification.alert( '2: ' + typeof navigator.connection.type + ' ' + navigator.connection.type, function(){}, '' );//@@
         try {
             if ( navigator.connection.type === Connection.NONE ) {
                 navigator.notification.alert( 'You must be connected to the internet to use this feature.', function(){}, '' );
@@ -118,15 +120,20 @@ angular.module('starter.controllers', [])
 
         // check if the google script has already loaded
         if ( typeof google === 'undefined' ) {
+            navigator.notification.alert( '3: ' + typeof cordova + ' ' + typeof cordova.plugins + ' ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
             if ( cordova.plugins.permissions === undefined ) {
                 loadGoogleScript();
             } else {
                 var permissions = cordova.plugins.permissions;
+                navigator.notification.alert( '5: ' + typeof permissions.hasPermission + ' ' + typeof permissions.INTERNET + ' ' + permissions.INTERNET, function(){}, '' );//@@
                 permissions.hasPermission( permissions.INTERNET, function( status ) {
+                    navigator.notification.alert( '6: ' + typeof status + ' ' + status.hasPermission.toString(), function(){}, '' );//@@
                     if ( status.hasPermission ) {
                         loadGoogleScript();
                     } else {
+                        navigator.notification.alert( '7: ' + typeof permissions.requestPermission, function(){}, '' );//@@
                         permissions.requestPermission( permissions.INTERNET, function(status) {
+                            navigator.notification.alert( '8: ' + typeof status + ' ' + status.hasPermission.toString(), function(){}, '' );//@@
                             // success
                             if ( status.hasPermission ) loadGoogleScript();
                             else closeModalError( 'You must give the app permissions to access the internet.' );
@@ -144,6 +151,7 @@ angular.module('starter.controllers', [])
     }
 
     function loadGoogleScript() {
+        navigator.notification.alert( '9: about to inject google places script', function(){}, '' );//@@
         // inject the google places script
         var script = document.createElement( 'script' );
         script.onload = findNearestLocation;
@@ -151,17 +159,21 @@ angular.module('starter.controllers', [])
             closeModalError( 'Could not load nearby locations.' );
         };
         script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ7lYvhZz09KD1KJK7x1X1PB7Z5t6LuNU&libraries=places';
+        navigator.notification.alert( '10: injecting script now', function(){}, '' );//@@
         document.body.appendChild( script );
+        navigator.notification.alert( '11: injected script', function(){}, '' );//@@
     }
 
     var Map, service;
     var latitude = undefined;
     var longitude = undefined;
     function findNearestLocation() {
+        navigator.notification.alert( '12: script loaded.', function(){}, '' );//@@
         // @TODO: wait until every part of the script is loaded??
         navigator.geolocation.getCurrentPosition( onFindPositionSuccess, onFindPositionError, { enableHighAccuracy: true } );
     }
     function onFindPositionSuccess( position ) {
+        navigator.notification.alert( '13: successfully found position', function(){}, '' );//@@
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
         var latLong = new google.maps.LatLng( latitude, longitude );
@@ -172,6 +184,7 @@ angular.module('starter.controllers', [])
             service = new google.maps.places.PlacesService( Map );
         }
 
+        navigator.notification.alert( '15: about to search nearby', function(){}, '' );//@@
         service.nearbySearch({
             location: latLong,
             radius: 300 // 300m/1000ft radius
@@ -180,11 +193,14 @@ angular.module('starter.controllers', [])
     }
 
     function onFindPositionError( error ) {
+        navigator.notification.alert( '14: failed getting position', function(){}, '' );//@@
         closeModalError( 'There was a problem getting your location: ' + error.message );
     }
 
     function foundPlacesCallback( results, status ) {
+        navigator.notification.alert( '16: got a list of nearby places. Status: ' + status + ' ' + google.maps.places.PlacesServiceStatus.OK, function(){}, '' );//@@
         if ( status === google.maps.places.PlacesServiceStatus.OK ) {
+            navigator.notification.alert( '17: number of results: ' + results.length, function(){}, '' );//@@
             // remove places where the vicinity is the same as the name (i.e. "Denver") since this is too generic
             results = results.filter( function(place) {
                 return place.name.toLowerCase() !== place.vicinity.toLowerCase();
