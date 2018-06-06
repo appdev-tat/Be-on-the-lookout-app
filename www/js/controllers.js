@@ -101,6 +101,7 @@ angular.module('starter.controllers', [])
     $scope.places = [];
 
     $scope.automaticallyGetLocation = function() {
+        navigator.notification.alert( 'Test', function(){}, '' );
         // check internet connection state
         navigator.notification.alert( '1: ' + typeof navigator + ' ' + typeof navigator.connection, function(){}, '' );//@@
         navigator.notification.alert( '2: ' + typeof navigator.connection.type + ' ' + navigator.connection.type, function(){}, '' );//@@
