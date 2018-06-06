@@ -123,7 +123,9 @@ angular.module('starter.controllers', [])
         // check if the google script has already loaded
         navigator.notification.alert( '2.6: ' + typeof google, function(){}, '' );//@@
         if ( typeof google === 'undefined' ) {
-            navigator.notification.alert( '3: ' + typeof cordova + ' ' + typeof cordova.plugins + ' ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
+            navigator.notification.alert( '2.7: ' + typeof cordova, function(){}, '' );//@@
+            navigator.notification.alert( '2.8: ' + typeof cordova.plugins, function(){}, '' );//@@
+            navigator.notification.alert( '2.9: ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
             if ( cordova.plugins.permissions === undefined ) {
                 loadGoogleScript();
             } else {
