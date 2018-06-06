@@ -103,9 +103,9 @@ angular.module('starter.controllers', [])
     $scope.automaticallyGetLocation = function() {
         navigator.notification.alert( 'Test', function(){}, '' );//@@
         // check internet connection state
-        navigator.notification.alert( '1: ' + typeof navigator + ' ' + typeof navigator.connection, function(){}, '' );//@@
-        navigator.notification.alert( '2: ' + typeof navigator.connection.type + ' ' + navigator.connection.type, function(){}, '' );//@@
-        navigator.notification.alert( '2.5: ' + typeof Connection + ' ' + Connection.NONE, function(){}, '' );//@@
+        //navigator.notification.alert( '1: ' + typeof navigator + ' ' + typeof navigator.connection, function(){}, '' );//@@
+        //navigator.notification.alert( '2: ' + typeof navigator.connection.type + ' ' + navigator.connection.type, function(){}, '' );//@@
+        //navigator.notification.alert( '2.5: ' + typeof Connection + ' ' + Connection.NONE, function(){}, '' );//@@
         try {
             if ( navigator.connection.type === Connection.NONE ) {
                 navigator.notification.alert( 'You must be connected to the internet to use this feature.', function(){}, '' );
@@ -123,8 +123,9 @@ angular.module('starter.controllers', [])
         // check if the google script has already loaded
         navigator.notification.alert( '2.6: ' + typeof google, function(){}, '' );//@@
         if ( typeof google === 'undefined' ) {
-            navigator.notification.alert( '2.7: ' + typeof cordova, function(){}, '' );//@@
-            navigator.notification.alert( '2.8: ' + typeof cordova.plugins, function(){}, '' );//@@
+            navigator.notification.alert( '2.7: ' + typeof cordova, function(){}, '' );//@@ (on ios: object)
+            navigator.notification.alert( '2.75: ' + Object.keys( cordova ).join(', '), function(){}, '' );//@@
+            navigator.notification.alert( '2.8: ' + typeof cordova.plugins, function(){}, '' );//@@ (on ios: undefined)
             navigator.notification.alert( '2.9: ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
             if ( cordova.plugins.permissions === undefined ) {
                 loadGoogleScript();
