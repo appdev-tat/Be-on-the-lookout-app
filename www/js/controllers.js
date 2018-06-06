@@ -124,10 +124,10 @@ angular.module('starter.controllers', [])
         navigator.notification.alert( '2.6: ' + typeof google, function(){}, '' );//@@
         if ( typeof google === 'undefined' ) {
             navigator.notification.alert( '2.7: ' + typeof cordova, function(){}, '' );//@@ (on ios: object)
-            navigator.notification.alert( '2.75: ' + Object.keys( cordova ).join(', '), function(){}, '' );//@@
-            navigator.notification.alert( '2.8: ' + typeof cordova.plugins, function(){}, '' );//@@ (on ios: undefined)
-            navigator.notification.alert( '2.9: ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
-            if ( cordova.plugins.permissions === undefined ) {
+            navigator.notification.alert( '2.75: ' + Object.keys( cordova ).join(', '), function(){}, '' );//@@ (on ios: define, require, version, platformVersion, platformId, getOriginalHandlers, callback*, exec, logger, InAppBrowser, *Handler)
+            //navigator.notification.alert( '2.8: ' + typeof cordova.plugins, function(){}, '' );//@@ (on ios: undefined)
+            //navigator.notification.alert( '2.9: ' + typeof cordova.plugins.permissions, function(){}, '' );//@@
+            if ( cordova.plugins === undefined || cordova.plugins.permissions === undefined ) {
                 loadGoogleScript();
             } else {
                 var permissions = cordova.plugins.permissions;
