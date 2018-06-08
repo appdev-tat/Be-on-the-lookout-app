@@ -188,6 +188,12 @@ input,
 .item-stacked-label input {
     background: none;
 }
+.input-label {
+    white-space: normal;
+    width: auto;
+    max-width: none;
+    padding-right: 4px !important;
+}
 .item-content { white-space: normal }
 form {
     width: calc( 100% + 20px );

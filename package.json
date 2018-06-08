@@ -1,6 +1,6 @@
 {
   "name": "busing-on-the-lookout-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Anti- human trafficking app for bus operators",
   "dependencies": {
     "cordova-browser": "^5.0.3",
