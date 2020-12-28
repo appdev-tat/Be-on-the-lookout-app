@@ -1,8 +1,9 @@
 {
-  "name": "tat",
-  "app_id": "",
-  "type": "ionic1",
-  "watchPatterns": [
-    "scss/**/*"
-  ]
+  "name": "busing-on-the-lookout",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "pro_id": "",
+  "id": ""
 }
