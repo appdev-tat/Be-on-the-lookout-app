@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+<ion-content fullscreen padding>
+  <h1>{{ 'resources.about.title' | translate }}</h1>
+  <ion-icon name="md-close" class="modal-close-btn" slot="fixed" (click)="modal.dismiss()"></ion-icon>
+
+  <div [innerHTML]="'resources.about.intro' | translate"></div>
+
+  <p>
+    {{ 'resources.about.annualReportLink.1' | translate:{year: lastYear} }}
+    <a (click)="miscService.openExternalLink('https://truckersagainsttrafficking.org/get-our-materials/#annual-reports')">{{ 'resources.about.annualReportLink.2' | translate }}</a>.
+  </p>
+
+  <p>
+    {{ 'resources.about.tatLink.1' | translate }}
+    <a (click)="miscService.openExternalLink('http://truckersagainsttrafficking.org/')">{{ 'resources.about.tatLink.2' | translate }}</a>.
+  </p>
+
+  <hr>
+
+  <p>{{ 'resources.about.credits' | translate }}</p>
+
+  <p>{{ 'resources.about.supportLink.1' | translate }}
+    <a (click)="miscService.openExternalLink('mailto:tat.truckers@gmail.com')">tat.truckers@gmail.com</a>.
+  </p>
+
+  <p style="opacity: 0.15">Version {{version}}</p>
+</ion-content>

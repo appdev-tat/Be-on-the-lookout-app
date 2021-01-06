@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+<ion-content fullscreen padding>
+  <h1>{{ 'resources.laws.title' | translate }}</h1>
+  <ion-icon name="md-close" class="modal-close-btn" slot="fixed" (click)="modal.dismiss()"></ion-icon>
+
+  <p><strong>{{ 'resources.laws.intro' | translate }}</strong></p>
+
+  <p><em>{{ 'resources.laws.intro2' | translate }}</em></p>
+
+  <div [innerHTML]="'resources.laws.bullets' | translate"></div>
+
+  <p><a (click)="miscService.openExternalLink('http://truckersagainsttrafficking.org/human-trafficking-laws/')">{{ 'resources.laws.linkText' | translate }}</a></p>
+
+  <responsive-image altTagKey="resources.laws.title" imageName="ht-laws"></responsive-image>
+
+</ion-content>

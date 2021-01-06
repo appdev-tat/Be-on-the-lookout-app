@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen padding>
+  <h1>{{ 'whatToReport.title' | translate }}</h1>
+  <ion-icon name="md-close" class="modal-close-btn" slot="fixed" (click)="modal.dismiss()"></ion-icon>
+
+  <p>{{ 'whatToReport.intro' | translate }}</p>
+  
+  <h1><ion-icon name="boxycar"></ion-icon> {{ 'whatToReport.cars' | translate }}</h1>
+  <p>{{ 'whatToReport.carsText' | translate }}</p>
+
+  <h1><ion-icon name="volunteer"></ion-icon> {{ 'whatToReport.people' | translate }}</h1>
+  <p>{{ 'whatToReport.peopleText' | translate }}</p>
+
+  <h1><ion-icon name="clock2"></ion-icon> {{ 'whatToReport.dateTime' | translate }}</h1>
+  <p>{{ 'whatToReport.dateTimeText' | translate }}</p>
+
+  <h1><ion-icon name="location"></ion-icon> {{ 'whatToReport.location' | translate }}</h1>
+  <p>{{ 'whatToReport.locationText' | translate }}</p>
+  
+</ion-content>

@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+<ion-content class="survey-modal" fullscreen padding>
+  <div>
+    <h1 style="flex: 0 0 auto">{{ titleTranslationKey | translate }}</h1>
+    
+    <form class="survey-wrapper" #form [style.margin-left]="getFormMarginLeft()">
+
+      <ng-container *ngFor="let page of surveyPages">
+        <div *ngIf="preDelay || page.rendered.isVisible(getAllVals())" class="page">
+          <h2 *ngIf="page.rendered.titleText">{{ page.rendered.titleText }}</h2>
+          <p *ngIf="page.rendered.topTextTranslationKey" [innerHTML]="page.rendered.topTextTranslationKey | translate"></p>
+          <p *ngIf="page.rendered.topText" [innerHTML]="page.rendered.topText"></p>
+          <p *ngIf="page.rendered.fields.length > 1 && pageHasRequiredFields(page.rendered)" class="required-warning"><span class="star">*</span> = {{ 'misc.required' | translate }}</p>
+          <ng-container *ngFor="let field of page.rendered.fields">
+            <p *ngIf="field.preFieldTextTranslationKey">{{ field.preFieldTextTranslationKey | translate }}</p>
+            <div class="input-wrapper input-type-{{field.type}}">
+              <div *ngIf="page.rendered.fields.length > 1 && field.isRequired" class="required-star"><span class="star">*</span></div>
+              <!-- text field types -->
+              <ng-container *ngIf="[SurveyFieldType.TEXT, SurveyFieldType.EMAIL, SurveyFieldType.TEL, SurveyFieldType.NUMBER].includes( field.type )">
+                <ion-item>
+                  <ion-label color="dark" position="floating">{{ field.label || (field.labelTranslationKey | translate) }}</ion-label>
+                  <ion-input
+                    [type]="field.type"
+                    color="dark"
+                    [attr.value]="field.defaultValue"
+                    [name]="field.name"
+                    [attr.min]="field.min"
+                    [attr.max]="field.max">
+                  </ion-input>
+                </ion-item>
+                <p *ngIf="field.helperTranslationKey" class="helper">{{ field.helperTranslationKey | translate }}</p>
+              </ng-container>
+              <!-- textarea -->
+              <ng-container *ngIf="field.type === SurveyFieldType.TEXTAREA">
+                <ion-textarea [name]="field.name" color="dark" [placeholder]="field.label || (field.labelTranslationKey | translate)">{{field.defaultValue}}</ion-textarea>
+                <p *ngIf="field.helperTranslationKey" class="helper">{{ field.helperTranslationKey | translate }}</p>
+              </ng-container>
+              <!-- select, country, state -->
+              <ion-item *ngIf="field.type === SurveyFieldType.SELECT || field.type === SurveyFieldType.COUNTRY || field.type === SurveyFieldType.STATE">
+                <ion-label color="dark" position="floating">{{ field.label || (field.labelTranslationKey | translate) }}</ion-label>
+                <ion-select
+                  [attr.value]="field.defaultValue"
+                  [name]="field.name"
+                  [cancelText]="'misc.buttons.cancel' | translate"
+                  [okText]="'misc.buttons.ok' | translate"
+                  [disabled]="field.type === SurveyFieldType.STATE && !getCountryFieldVal(field.countryDropdownName)"
+                  [interfaceOptions]="{cssClass: 'select-options'}">
+                  <ng-container *ngIf="field.type === SurveyFieldType.SELECT">
+                    <ion-select-option *ngFor="let option of field.options" [value]="option.value">{{ option.label || (option.labelTranslationKey | translate) }}</ion-select-option>
+                  </ng-container>
+                  <ng-container *ngIf="field.type === SurveyFieldType.COUNTRY">
+                    <ion-select-option *ngFor="let option of locationOptions" [value]="option.country">{{ option.country }}</ion-select-option>
+                  </ng-container>
+                  <ng-container *ngIf="field.type === SurveyFieldType.STATE && getCountryFieldVal(field.countryDropdownName)">
+                      <ion-select-option *ngFor="let state of getStatesOfCountry(getCountryFieldVal(field.countryDropdownName))" [value]="state">{{ state }}</ion-select-option>
+                  </ng-container>
+                </ion-select>
+              </ion-item>
+              <!-- choice -->
+              <ng-container *ngIf="field.type === SurveyFieldType.CHOICE">
+                <ng-container *ngIf="!field.multi">
+                  <label *ngFor="let option of field.options" [class.selected]="getFieldVal(field) === option.value" (click)="noop()">{{ option.label || (option.labelTranslationKey | translate) }}
+                    <input *ngIf="field.defaultValue === option.value" type="radio" [name]="field.name" [value]="option.value" checked>
+                    <input *ngIf="field.defaultValue !== option.value" type="radio" [name]="field.name" [value]="option.value">
+                  </label>
+                </ng-container>
+                <ng-container *ngIf="field.multi">
+                  <p class="multi-note">{{ 'misc.chooseMultiple' | translate }}</p>
+                  <label *ngFor="let option of field.options" [class.selected]="getFieldVal(field).split('; ').includes(option.value)" (click)="noop()">{{ option.label || (option.labelTranslationKey | translate) }}
+                    <input type="checkbox" [name]="field.name" [value]="option.value">
+                  </label>
+                </ng-container>
+              </ng-container>
+              <!-- date -->
+              <ion-item *ngIf="field.type === SurveyFieldType.DATE">
+                <ion-label color="dark" position="floating">{{ field.label || (field.labelTranslationKey | translate) }}</ion-label>
+                <ion-datetime
+                  [attr.name]="field.name"
+                  [attr.min]="field.min"
+                  [attr.max]="field.max"
+                  [attr.value]="field.defaultValue"
+                  [cancelText]="'misc.buttons.cancel' | translate"
+                  [doneText]="'misc.buttons.ok' | translate"
+                  [attr.month-names]="'misc.datetime.monthNames' | translate"
+                  [attr.month-short-names]="'misc.datetime.monthNamesShort' | translate"
+                  [attr.day-names]="'misc.datetime.dayNames' | translate"
+                  [attr.day-short-names]="'misc.datetime.dayNamesShort' | translate">
+                </ion-datetime>
+              </ion-item>
+              <!-- time -->
+              <ion-item *ngIf="field.type === SurveyFieldType.TIME">
+                <ion-label color="dark" position="floating">{{ field.label || (field.labelTranslationKey | translate) }}</ion-label>
+                <ion-datetime
+                  [attr.name]="field.name"
+                  [cancelText]="'misc.buttons.cancel' | translate"
+                  [doneText]="'misc.buttons.ok' | translate"
+                  displayFormat="h:mm a">
+                </ion-datetime>
+              </ion-item>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+
+    </form>
+
+    <div class="progress-bar">
+      <div class="progress-bar-fill" [style.width.%]="100 * (activePage + 1) / surveyPages.length"></div>
+    </div>
+
+    <div class="survey-nav">
+      <div class="nav-button nav-left" [class.disabled]="activePage === firstPage" (click)="goBack()">
+        <chevron-svg direction="left"></chevron-svg>
+      </div>
+      <div *ngIf="!isLastPage()" class="nav-button nav-right" [class.disabled]="!canContinue()" (click)="advance()">
+        <chevron-svg direction="right"></chevron-svg>
+      </div>
+      <div *ngIf="isLastPage()" class="nav-button nav-right nav-submit" [class.disabled]="!canContinue()" (click)="finish()">
+        {{ (survey.submitButtonTranslationKey || 'misc.buttons.submit') | translate }}
+      </div>
+    </div>
+  </div>
+
+  <ion-icon name="md-close" class="modal-close-btn" slot="fixed" (click)="modal.dismiss()"></ion-icon>
+</ion-content>

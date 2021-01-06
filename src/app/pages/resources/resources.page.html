@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{ 'resources.title' | translate }}</h1>
+  <p>{{ 'resources.intro' | translate }}</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-md="6">
+        <image-button image="resources.videos.jpg" (click)="modalService.open(VideosComponent)">{{ 'resources.btns.videos' | translate }}</image-button>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6">
+        <image-button image="resources.books.jpg" (click)="modalService.open(RecommendedBooksComponent)">{{ 'resources.btns.recommendedBooks' | translate }}</image-button>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6">
+        <image-button image="resources.laws.jpg" (click)="modalService.open(HumanTraffickingLawsComponent)">{{ 'resources.btns.humanTraffickingLaws' | translate }}</image-button>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6">
+        <image-button image="resources.about-botl.jpg" (click)="modalService.open(AboutBotlComponent)">{{ 'resources.btns.aboutBotl' | translate }}</image-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

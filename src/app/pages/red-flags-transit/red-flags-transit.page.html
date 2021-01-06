@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{ 'redFlagsTransit.title' | translate }}</h1>
+
+  <div [innerHTML]="'redFlagsCommon.intro' | translate "></div>
+
+  <hr>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-lg="5.75">
+        <h2>{{ 'redFlagsCommon.flagsHeader' | translate }}</h2>
+
+        <div [innerHTML]="'redFlagsTransit.flags.1' | translate "></div>
+
+        <image-button image="red-flags-transit.example-1.jpg" (click)="modalService.open(GenericModalComponent, {title: 'redFlagsCommon.caseStudy', bodyHtml: 'redFlagsTransit.examples.ohio'})">
+          {{ 'redFlagsCommon.example' | translate }}
+        </image-button>
+        
+        <div [innerHTML]="'redFlagsTransit.flags.2' | translate "></div>
+
+        <image-button image="red-flags-transit.example-2.jpg" (click)="modalService.open(GenericModalComponent, {title: 'redFlagsCommon.caseStudy', bodyHtml: 'redFlagsTransit.examples.washington'})">
+          {{ 'redFlagsCommon.example' | translate }}
+        </image-button>
+
+        <div [innerHTML]="'redFlagsTransit.flags.3' | translate "></div>
+
+        <image-button image="red-flags-transit.example-3.jpg" (click)="modalService.open(GenericModalComponent, {title: 'redFlagsCommon.caseStudy', bodyHtml: 'redFlagsTransit.examples.california'})">
+          {{ 'redFlagsCommon.example' | translate }}
+        </image-button>
+
+        <div [innerHTML]="'redFlagsTransit.flags.4' | translate "></div>
+
+        <image-button image="red-flags-transit.example-4.jpg" (click)="modalService.open(GenericModalComponent, {title: 'redFlagsCommon.caseStudy', bodyHtml: 'redFlagsTransit.examples.newYork'})">
+          {{ 'redFlagsCommon.example' | translate }}
+        </image-button>
+
+      </ion-col>
+
+      <!-- spacer column -->
+      <ion-col size-xs="0" size-lg="0.5"></ion-col>
+
+      <ion-col size-xs="12" size-lg="5.75">
+        <h2>{{ 'redFlagsCommon.questionsHeader' | translate }}</h2>
+        <p>{{ 'redFlagsCommon.questionsIntro' | translate }}</p>
+        <div [innerHTML]="'redFlagsTransit.questions' | translate"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <hr>
+
+  <p>{{ 'redFlagsCommon.postLink' | translate }} <a (click)="miscService.openExternalLink('http://www.busingonthelookout.org')">www.busingonthelookout.org</a>.</p>
+
+</ion-content>

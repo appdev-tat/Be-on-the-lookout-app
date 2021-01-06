@@ -1,0 +1,80 @@
+$primary-color: #2e90d0;
+
+$topPadding: 0.3em;
+$sidePadding: 0.5em;
+
+.wrap {
+    display: block;
+    align-items: center;
+    padding: $topPadding $sidePadding;
+    position: relative;
+
+    background-color: #333;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 3px 4px black;
+
+    font-family: var( --title-font-family );
+    font-size: 240%;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
+    
+    color: white;
+    cursor: pointer;
+    
+    .hint {
+        display: none;
+        font-size: 35%;
+        font-family: var( --ion-font-family );
+    }
+
+    &.has-large-hint .hint {
+        font-size: 60%;
+    }
+
+    .alert-dot {
+        display: none;
+        width: 0.3em;
+        height: 0.3em;
+        position: absolute;
+        right: 0.5em;
+        top: calc( 50% - 0.15em );
+
+        border-radius: 10em;
+        background: $primary-color;
+    }
+
+    &:hover, &:active {
+        background-color: #3e7c96;
+        background-blend-mode: overlay; /* safari may not support luminosity, so declare overlay */
+        background-blend-mode: luminosity;
+    }
+
+    &.tall {
+        padding-top: #{ $topPadding + 1em };
+        padding-bottom: #{ $topPadding + 1em };
+    }
+
+    &.has-hint {
+        padding-top: #{ $topPadding - 0.22em };
+        padding-bottom: #{ topPadding - 0.142em };
+        &.tall {
+            padding-top: #{ $topPadding + 1em - 0.22em };
+            padding-bottom: #{ topPadding + 1em - 0.142em };
+        }
+        .hint { display: block }
+    }
+
+    &.required {
+        border-left: 6px solid $primary-color;
+    }
+
+    &.not-completed {
+        .alert-dot { display: block }
+    }
+
+    &.disabled {
+        opacity: 0.3;
+        background-blend-mode: unset;
+        cursor: default;
+    }
+}

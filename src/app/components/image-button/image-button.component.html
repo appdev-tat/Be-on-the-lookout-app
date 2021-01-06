@@ -1,0 +1,13 @@
+<div class="wrap"
+[style.background-image]="bgCss"
+[class.has-hint]="hint"
+[class.has-large-hint]="hasLargeHint"
+[class.tall]="tall"
+[class.required]="required"
+[class.not-completed]="!completed"
+[class.disabled]="disabled"
+(click)="onButtonClick($event)">
+  <ng-content></ng-content>
+  <div class="hint">{{hint}}</div>
+  <div class="alert-dot"></div>
+</div>

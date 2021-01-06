@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="assets/images/botl-logo.png" class="logo">
+
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="6">
+        <image-button image="home.report-activity.jpg" (click)="navCtrl.navigateRoot('/tabs/report')">
+          <ion-icon name="triangle"></ion-icon>
+          {{ 'home.reportActivity' | translate }}
+        </image-button>
+        <image-button image="home.red-flags-school.jpg" (click)="navCtrl.navigateRoot('/tabs/red-flags/school')">
+          <ion-icon name="redflag"></ion-icon>
+          {{ 'home.redFlagsSchool' | translate }}
+        </image-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="6">
+        <image-button image="home.red-flags-transit.jpg" (click)="navCtrl.navigateRoot('/tabs/red-flags/transit')">
+          <ion-icon name="redflag"></ion-icon>
+          {{ 'home.redFlagsTransit' | translate }}
+        </image-button>
+        <image-button image="home.resources.jpg" (click)="navCtrl.navigateRoot('/tabs/resources')">
+          <ion-icon name="magnifier"></ion-icon>
+          {{ 'home.resources' | translate }}
+        </image-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

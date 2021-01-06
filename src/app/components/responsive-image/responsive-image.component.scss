@@ -1,0 +1,12 @@
+.infographic {
+    max-height: 90%;
+    max-width: 100%;
+    width: 100%;
+}
+
+.for-tablets { display: none }
+
+@media ( min-width: 768px ) {
+    .for-tablets { display: block }
+    .for-phones { display: none }
+}

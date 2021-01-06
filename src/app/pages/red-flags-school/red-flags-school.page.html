@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{ 'redFlagsSchool.title' | translate }}</h1>
+
+  <div [innerHTML]="'redFlagsCommon.intro' | translate "></div>
+
+  <hr>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-lg="5.75">
+        <h2>{{ 'redFlagsCommon.flagsHeader' | translate }}</h2>
+
+        <div [innerHTML]="'redFlagsSchool.flags' | translate "></div>
+
+        <image-button image="red-flags-school.example-1.jpg" (click)="modalService.open(GenericModalComponent, {title: 'redFlagsCommon.survivorStory', bodyHtml: 'redFlagsSchool.examples.liz'})">
+          {{ 'redFlagsCommon.example' | translate }}
+        </image-button>
+      </ion-col>
+
+      <!-- spacer column -->
+      <ion-col size-xs="0" size-lg="0.5"></ion-col>
+
+      <ion-col size-xs="12" size-lg="5.75">
+        <h2>{{ 'redFlagsCommon.questionsHeader' | translate }}</h2>
+        <p>{{ 'redFlagsCommon.questionsIntro' | translate }}</p>
+        <div [innerHTML]="'redFlagsSchool.questions' | translate"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <hr>
+
+  <p>{{ 'redFlagsSchool.post' | translate }}</p>
+  <p>{{ 'redFlagsCommon.postLink' | translate }} <a (click)="miscService.openExternalLink('http://www.busingonthelookout.org')">www.busingonthelookout.org</a>.</p>
+
+</ion-content>

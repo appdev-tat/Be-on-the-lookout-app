@@ -1,0 +1,262 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// import custom font
+@font-face {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/BarlowCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/GothamBook-Italic.woff2') format('woff2'),
+        url('assets/fonts/GothamBook-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/Gotham-Book.woff2') format('woff2'),
+        url('assets/fonts/Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/Gotham-BlackItalic.woff2') format('woff2'),
+        url('assets/fonts/Gotham-BlackItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/Gotham-Black.woff2') format('woff2'),
+        url('assets/fonts/Gotham-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+// ionic doesn't seem to import the variables scss file in the proper order (after ionic base styles).
+// include it here to properly override the base styles.
+@import "./theme/variables.scss";
+
+
+// sometimes on Andoid, the virtual keyboard disappears, the nav tabs along the bottom align themselves
+// with where the top of the keyboard was, halfway up the screen... setting some stuff to 100vh fixes that
+body,
+ion-app,
+ion-app > ion-router-outlet,
+ion-app > ion-router-outlet > app-tabs,
+ion-app > ion-router-outlet > app-tabs > ion-tabs {
+    height: 100vh;
+}
+
+// fix some tab nav styles
+$numTabs: 5;
+ion-tabs > ion-tab-bar > ion-tab-button {
+    max-width: calc( 100vw / $numTabs );
+    > ion-label { white-space: nowrap !important }
+    > ion-label, > ion-icon { color: #eee }
+    &.tab-selected {
+        > ion-label, > ion-icon { color: $color-primary }
+    }
+}
+// Set a media query to hide text for tab buttons when the screen is too narrow.
+@media only screen and (max-width: 430px) {
+    ion-tabs > ion-tab-bar > ion-tab-button > ion-label { display: none }
+}
+
+
+body {
+    font-size: 15px;
+}
+
+ion-title,
+h1 {
+    font-family: var( --title-font-family );
+    font-size: 240%;
+
+    ion-icon { font-size: 73% }
+}
+
+ion-content {
+    li { margin-bottom: calc( var(--ion-margin) / 2 ) }
+    h1:first-child { margin-top: 0 }
+
+    a {
+        text-decoration: none;
+    }
+    
+    hr {
+        background: #555;
+        box-shadow: 0px 2px 2px black;
+        margin-bottom: var( --ion-margin );
+    }
+
+    p {
+        line-height: 1.2;
+    }
+
+    ul li ul,
+    ul li ol,
+    ol li ul,
+    ol li ol {
+        margin-top: calc( var(--ion-margin) / 2 );
+    }
+}
+
+ion-header > ion-toolbar {
+    height: 0;
+}
+
+.statusbar { background: black }
+
+.modal-close-btn {
+    position: fixed;
+    z-index: 9999 !important;
+    top: var( --ion-padding );
+    right: var( --ion-padding );
+    font-size: 300%;
+    cursor: pointer;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    fill: white;
+    // ios has issues with z-indexing for fixed items unless we do this
+    -webkit-transform: translate3d(0,0,0);
+}
+
+ion-modal ion-content,
+ion-content.like-modal {
+    h1:first-child {
+        padding-right: 1.3em;
+    }
+}
+
+ion-alert {
+    .alert-wrapper {
+        --background: white;
+    }
+    .alert-title {
+        color: black !important;
+    }
+}
+
+.sc-ion-alert-ios {
+    input { background: white !important }
+}
+
+ion-input, ion-textarea {
+    margin-top: 0.5em;
+    border: var( --input-border-width ) solid var( --input-border-color );
+    border-width: 0 0 var( --input-border-width ) 0;
+}
+ion-textarea {
+    padding-left: 0.5em;
+    border-width: 0 0 var( --input-border-width ) var( --input-border-width );
+}
+ion-item.item-datetime {
+    margin-top: 0.5em;
+    &:after {
+        display: block;
+        content: '';
+        border-bottom: var( --input-border-width ) solid var( --input-border-color );
+    }
+}
+
+ion-item.has-border {
+    border-bottom: var( --input-border-width ) solid var( --input-border-color );
+}
+
+ion-item {
+    --padding-start: 0;
+}
+
+.large-btn {
+    --width: 200px;
+    --height: 3.5em;
+}
+
+ion-textarea {
+    height: 5em;
+    &.tall { height: 10em }
+}
+
+ion-label.sc-ion-label-md-h {
+    white-space: normal;
+}
+
+.like-ion-label {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+ion-toggle {
+    --background: #333;
+    --handle-background: #444;
+    --ion-background-color-step-50: black;
+}
+
+ion-alert,
+ion-loading {
+    --ion-text-color: black;
+}
+
+ion-alert.select-options {
+    .alert-radio-group {
+        button {
+            min-height: 44px;
+            height: auto;
+            contain: unset;
+        }
+        .alert-radio-label {
+            white-space: normal;
+            overflow: visible;
+        }
+    }
+}
+
+ion-picker-column .picker-opts .picker-opt {
+    // fix an issue in the time picker where "pm" is cut off as "p..."
+    text-overflow: clip;
+}
+
+ion-grid {
+    padding: 0;
+    margin: -5px; // undo the padding around the outside of columns and rows
+}
+
+.lds-ring--video {
+    position: absolute;
+    top: calc( 50% - 32px );
+    left: calc( 50% - 32px );
+}
+
+
+@media only screen and (min-height: 768px) and (min-width: 768px) {
+    .modal-large .modal-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-height: 600px) and (min-width: 768px) {
+    .modal-large .modal-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+}

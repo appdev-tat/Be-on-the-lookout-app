@@ -1,0 +1,26 @@
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+        width: 140px;
+
+        margin: 0 32px 32px 0;
+
+        img { width: 100% }
+        .book-title {
+            font-weight: bold;
+            font-size: 122%;
+            padding-top: 0.25em;
+        }
+        .book-byline {
+            font-style: italic;
+            font-size: 90%;
+        }
+    }
+}
+
+.subtitle {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
