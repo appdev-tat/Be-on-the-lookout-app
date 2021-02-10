@@ -49,12 +49,14 @@
         <source-file src="resources/android/colors/values/" target="app/src/main/res" />
         <resource-file src="resources/android/colors/values/colors.xml" target="/app/src/main/res/values/colors.xml" />
         <comment>Adaptive icons</comment>
-        <icon background="@color/background" density="mdpi" foreground="resources/android/icon/adaptive/mdpi-foreground.png" />
-        <icon background="@color/background" density="hdpi" foreground="resources/android/icon/adaptive/hdpi-foreground.png" />
-        <icon background="@color/background" density="xhdpi" foreground="resources/android/icon/adaptive/xhdpi-foreground.png" />
-        <icon background="@color/background" density="xxhdpi" foreground="resources/android/icon/adaptive/xxhdpi-foreground.png" />
-        <icon background="@color/background" density="xxxhdpi" foreground="resources/android/icon/adaptive/xxxhdpi-foreground.png" />
+        <icon background="resources/android/icon/ldpi-background.png" density="ldpi" foreground="resources/android/icon/ldpi-foreground.png" />
+        <icon background="resources/android/icon/mdpi-background.png" density="mdpi" foreground="resources/android/icon/mdpi-foreground.png" />
+        <icon background="resources/android/icon/hdpi-background.png" density="hdpi" foreground="resources/android/icon/hdpi-foreground.png" />
+        <icon background="resources/android/icon/xhdpi-background.png" density="xhdpi" foreground="resources/android/icon/xhdpi-foreground.png" />
+        <icon background="resources/android/icon/xxhdpi-background.png" density="xxhdpi" foreground="resources/android/icon/xxhdpi-foreground.png" />
+        <icon background="resources/android/icon/xxxhdpi-background.png" density="xxxhdpi" foreground="resources/android/icon/xxxhdpi-foreground.png" />
         <comment>Standard icons</comment>
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
@@ -74,7 +76,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
         <preference name="android-minSdkVersion" value="19" />
-        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+        <preference name="android-targetSdkVersion" value="29" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
