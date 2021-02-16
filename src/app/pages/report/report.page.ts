@@ -3,7 +3,7 @@ import { Sim } from '@ionic-native/sim/ngx';
 import { WhatToReportComponent } from '../../modals';
 import { ModalService, MiscService } from '../../services';
 import { SurveyComponent } from '../../modals';
-import { ISurvey, SurveyFieldType } from '../../models/survey';
+import { ISurvey, ISurveyField, SurveyFieldType } from '../../models/survey';
 
 @Component({
   selector: 'app-report',
@@ -14,6 +14,7 @@ export class ReportPage {
 
   WhatToReportComponent = WhatToReportComponent;
   hasSim = false;
+  redFlagOptions: ISurveyField['options'];
 
   constructor(
     public modalService: ModalService,
@@ -67,6 +68,50 @@ export class ReportPage {
           isRequired: true
         }]
       }}, () => { return {
+        // page pre-4: victim details, cont'd
+        isVisible: vals => vals.hasSeenVictim === 'yes',
+        fields: [{
+          type: SurveyFieldType.SELECT,
+          labelTranslationKey: 'emailReport.victim.flagType.label',
+          name: 'flagType',
+          isRequired: true,
+          options: [
+            { value: 'School', labelTranslationKey: 'emailReport.victim.flagType.school' },
+            { value: 'Transit',  labelTranslationKey: 'emailReport.victim.flagType.transit' }
+          ]
+        }],
+        onContinue: async vals => {
+          // set the flag options that will show on the next page
+          if ( vals.flagType === 'School' ) {
+            this.redFlagOptions = [
+              { value: 'The student has accumulated frequent absences', labelTranslationKey: 'emailReport.victim.flags.school.absences' },
+              { value: 'There has recently been a new or different person dropping off or picking up the student from the bus stop or school', labelTranslationKey: 'emailReport.victim.flags.school.differentPerson' },
+              { value: 'The student has signs of bruises, physical trauma, or malnourishment', labelTranslationKey: 'emailReport.victim.flags.school.bruises' },
+              { value: 'The student has inappropriate dress for the weather or school', labelTranslationKey: 'emailReport.victim.flags.school.dress' },
+              { value: 'The student has symptoms of anger, panic, irritability, phobia, or hyperactivity that weren’t there before', labelTranslationKey: 'emailReport.victim.flags.school.emotions' },
+              { value: 'The student exhibits mood swings, such as frequent crying, temper tantrums, or clingy behavior', labelTranslationKey: 'emailReport.victim.flags.school.moodSwings' },
+              { value: 'The student has markings or tattoos that could be a pimp’s branding', labelTranslationKey: 'emailReport.victim.flags.school.branding' },
+              { value: 'The student suddenly has the latest gadgets, new clothes, manicured nails, or other material possessions that a pimp may have given them during a grooming process', labelTranslationKey: 'emailReport.victim.flags.school.gadgets' },
+              { value: 'The student shows acknowledgement that they have a pimp and/or are making a quota', labelTranslationKey: 'emailReport.victim.flags.school.quota' }
+            ];
+          } else if ( vals.flagType === 'Transit' ) {
+            this.redFlagOptions = [
+              { value: 'The victim is not allowed to speak for himself/herself', labelTranslationKey: 'emailReport.victim.flags.transit.noSpeak' },
+              { value: 'The victim’s tickets or identification documents are being controlled by another person', labelTranslationKey: 'emailReport.victim.flags.transit.tickets' },
+              { value: 'The victim shows acknowledgement of a pimp or making a quota', labelTranslationKey: 'emailReport.victim.flags.transit.quota' },
+              { value: 'The victim is a minor traveling without adult supervision', labelTranslationKey: 'emailReport.victim.flags.transit.minor' },
+              { value: 'The victim is a minor who does not know the person who is picking them up at their destination', labelTranslationKey: 'emailReport.victim.flags.transit.minorPickUp' },
+              { value: 'The victim has never met the person who purchased their ticket for them', labelTranslationKey: 'emailReport.victim.flags.transit.strangerPurchase' },
+              { value: 'The victim has bruising, branding or signs of physical trauma', labelTranslationKey: 'emailReport.victim.flags.transit.bruising' },
+              { value: 'The victim looks dirty and disheveled, or seems confused, panicked, or afraid', labelTranslationKey: 'emailReport.victim.flags.transit.emotions' },
+              { value: 'The victim is offering to exchange sex for money or any other good or service', labelTranslationKey: 'emailReport.victim.flags.transit.offeringSex' }
+            ];
+          } else {
+            this.redFlagOptions = [];
+          }
+          return true;
+        }
+      }}, () => { return {
         // page 4: victim details, cont'd
         isVisible: vals => vals.hasSeenVictim === 'yes',
         topTextTranslationKey: 'emailReport.victim.flags.label',
@@ -74,17 +119,7 @@ export class ReportPage {
           type: SurveyFieldType.CHOICE,
           name: 'victimFlags',
           multi: true,
-          options: [
-            { value: 'The victim has restricted or controlled communication — not allowed to speak for self', labelTranslationKey: 'emailReport.victim.flags.hasRestrictedCommunication' },
-            { value: 'The victim has a disheveled or unkempt appearance, is alone, scared, or crying', labelTranslationKey: 'emailReport.victim.flags.isDisheveled' },
-            { value: 'The victim is a minor traveling without adult supervision', labelTranslationKey: 'emailReport.victim.flags.isMinor' },
-            { value: 'The victim offers to exchange sex for a ride, meal, etc.', labelTranslationKey: 'emailReport.victim.flags.offersSex' },
-            { value: 'The victim does not know the person who is picking him/her up', labelTranslationKey: 'emailReport.victim.flags.doesNotKnow' },
-            { value: 'The victim shows any acknowledgement that she/he has a pimp and is making a quota', labelTranslationKey: 'emailReport.victim.flags.hasPimp' },
-            { value: 'The victim has signs of branding or tattooing of the trafficker\'s name', labelTranslationKey: 'emailReport.victim.flags.hasBranding' },
-            { value: 'The victim has a lack of knowledge of the community or his/her whereabouts', labelTranslationKey: 'emailReport.victim.flags.hasLackOfKnowledge' },
-            { value: 'The victim is not in control of his/her own identification documents', labelTranslationKey: 'emailReport.victim.flags.hasNoId' }
-          ]
+          options: this.redFlagOptions
         }, {
           type: SurveyFieldType.TEXTAREA,
           name: 'victimFlagsOther',
@@ -212,7 +247,7 @@ export class ReportPage {
             encodeURIComponent(body)
         );
 
-        return new Promise( (resolve,reject) => resolve() );
+        return new Promise( (resolve,reject) => resolve(undefined) );
       }
     };
     

@@ -9,6 +9,6 @@ export const environment = {
     projectId: 'truckers-against-trafficking',
     storageBucket: 'truckers-against-trafficking.appspot.com'
   },
-  externalResourcesURL: 'https://app-proxy.truckersagainsttrafficking.org/external-resources/',
+  externalResourcesURL: 'https://app-proxy.truckersagainsttrafficking.org/external-resources/botl/',
   emailVerificationRequired: true
 };

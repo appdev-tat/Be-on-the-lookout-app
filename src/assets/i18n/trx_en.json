@@ -31,17 +31,35 @@
         "label": "Appearance",
         "placeholder": "Describe the victim's height, weight, ethnicity, hair color, eye color, age, etc."
       },
+      "flagType": {
+        "label": "What sort of situation are you in?",
+        "school": "School transportation",
+        "transit": "Transit/motorcoach"
+      },
       "flags": {
-        "doesNotKnow": "The victim does not know the person who is picking him/her up",
-        "hasBranding": "The victim has signs of branding or tattooing of the trafficker's name (often on the neck)",
-        "hasLackOfKnowledge": "The victim has a lack of knowledge of the community or his/her whereabouts",
-        "hasNoId": "The victim is not in control of his/her own identification documents (ID/passport)",
-        "hasPimp": "The victim shows any acknowledgement that she/he has a pimp and is making a quota",
-        "hasRestrictedCommunication": "The victim has restricted or controlled communication — not allowed to speak for self",
-        "isDisheveled": "The victim has a disheveled or unkempt appearance, is alone, scared, or crying",
-        "isMinor": "The victim is a minor traveling without adult supervision",
         "label": "Check the red flags that apply",
-        "offersSex": "The victim offers to exchange sex for a ride, meal, etc."
+        "school": {
+          "absences": "The student has accumulated frequent absences",
+          "branding": "The student has markings or tattoos that could be a pimp’s branding",
+          "bruises": "The student has signs of bruises, physical trauma, or malnourishment",
+          "differentPerson": "There has recently been a new or different person dropping off or picking up the student from the bus stop or school",
+          "dress": "The student has inappropriate dress for the weather or school",
+          "emotions": "The student has symptoms of anger, panic, irritability, phobia, or hyperactivity that weren’t there before",
+          "gadgets": "The student suddenly has the latest gadgets, new clothes, manicured nails, or other material possessions that a pimp may have given them during a grooming process",
+          "moodSwings": "The student exhibits mood swings, such as frequent crying, temper tantrums, or clingy behavior",
+          "quota": "The student shows acknowledgement that they have a pimp and/or are making a quota"
+        },
+        "transit": {
+          "bruising": "The victim has bruising, branding or signs of physical trauma",
+          "emotions": "The victim looks dirty and disheveled, or seems confused, panicked, or afraid",
+          "minor": "The victim is a minor traveling without adult supervision",
+          "minorPickUp": "The victim is a minor who does not know the person who is picking them up at their destination",
+          "noSpeak": "The victim is not allowed to speak for himself/herself",
+          "offeringSex": "The victim is offering to exchange sex for money or any other good or service",
+          "quota": "The victim shows acknowledgement of a pimp or making a quota",
+          "strangerPurchase": "The victim has never met the person who purchased their ticket for them",
+          "tickets": "The victim’s tickets or identification documents are being controlled by another person"
+        }
       },
       "gender": {
         "female": "Female",
