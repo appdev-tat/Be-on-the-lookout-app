@@ -32,7 +32,7 @@
         "placeholder": "Describe the victim's height, weight, ethnicity, hair color, eye color, age, etc."
       },
       "flagType": {
-        "label": "What sort of situation are you in?",
+        "label": "What industry are you in?",
         "school": "School transportation",
         "transit": "Transit/motorcoach"
       },

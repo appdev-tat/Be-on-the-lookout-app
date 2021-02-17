@@ -86,7 +86,7 @@ export class MiscService {
       });
       alert.present();
       alert.onDidDismiss().then( () => {
-        resolve();
+        resolve( undefined );
       });
     });
   }
@@ -148,12 +148,12 @@ export class MiscService {
   public waitForLanguageLoaded(): Promise<any> {
     return new Promise( resolve => {
       if ( this.languageLoaded ) {
-        resolve();
+        resolve( undefined );
       } else {
         const interval = setInterval( () => {
           if ( this.languageLoaded ) {
             clearInterval( interval );
-            resolve();
+            resolve( undefined );
           }
         }, 200 );
       }
