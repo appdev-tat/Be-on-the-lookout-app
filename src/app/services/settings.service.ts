@@ -41,7 +41,7 @@ export class SettingsService {
       interval = setInterval( () => {
         if ( this.isReady ) {
           clearInterval( interval );
-          resolve();
+          resolve( null );
         }
       }, 100 );
     });

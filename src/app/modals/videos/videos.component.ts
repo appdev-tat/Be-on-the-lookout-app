@@ -35,6 +35,14 @@ export class VideosComponent implements OnInit {
         url: this.domSanitizer.bypassSecurityTrustResourceUrl( video.url )
       });
 
+      video = miscService.getEmbeddableVideo( urls.botl.videos['school-transportation-training'] );
+      this.videos.push({
+        title: 'resources.videos.video4.title',
+        desc: 'resources.videos.video4.description',
+        type: video.type,
+        url: this.domSanitizer.bypassSecurityTrustResourceUrl( video.url )
+      });
+
       video = miscService.getEmbeddableVideo( urls.botl.videos['casino-webinar'] );
       this.videos.push({
         title: 'resources.videos.video2.title',

@@ -4,7 +4,8 @@ import {
   AboutBotlComponent,
   RecommendedBooksComponent,
   HumanTraffickingLawsComponent,
-  VideosComponent
+  VideosComponent,
+  PodcastsComponent
 } from '../../modals/';
 import { ModalService } from '../../services';
 
@@ -21,6 +22,7 @@ export class ResourcesPage implements OnInit {
   RecommendedBooksComponent = RecommendedBooksComponent;
   HumanTraffickingLawsComponent = HumanTraffickingLawsComponent;
   VideosComponent = VideosComponent;
+  PodcastsComponent = PodcastsComponent;
 
   ngOnInit() {
   }

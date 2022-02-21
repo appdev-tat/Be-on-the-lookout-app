@@ -6,3 +6,4 @@ export { RecommendedBooksComponent } from './recommended-books/recommended-books
 export { VideosComponent } from './videos/videos.component';
 export { WhatToReportComponent } from './what-to-report/what-to-report.component';
 export { SurveyComponent } from './survey/survey.component';
+export { PodcastsComponent } from './podcasts/podcasts.component';

@@ -33,7 +33,7 @@ import { AppComponent } from './app.component';
 import { CommonComponentsModule } from './components/common-components.module';
 import {
   WhatToReportComponent, VideosComponent, RecommendedBooksComponent,
-  AboutBotlComponent, HumanTraffickingLawsComponent,
+  AboutBotlComponent, HumanTraffickingLawsComponent, PodcastsComponent,
   GenericModalComponent,
   SurveyComponent
 } from './modals';
@@ -44,14 +44,14 @@ import { RedFlagsPopover } from './tabs/popovers/red-flags/red-flags.popover';
   declarations: [
     AppComponent,
     WhatToReportComponent, VideosComponent, RecommendedBooksComponent,
-    AboutBotlComponent, HumanTraffickingLawsComponent,
+    AboutBotlComponent, HumanTraffickingLawsComponent, PodcastsComponent,
     GenericModalComponent,
     SurveyComponent,
     RedFlagsPopover
   ],
   entryComponents: [
     WhatToReportComponent, VideosComponent, RecommendedBooksComponent,
-    AboutBotlComponent, HumanTraffickingLawsComponent,
+    AboutBotlComponent, HumanTraffickingLawsComponent, PodcastsComponent,
     GenericModalComponent,
     SurveyComponent,
     RedFlagsPopover

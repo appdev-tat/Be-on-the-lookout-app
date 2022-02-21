@@ -30,4 +30,18 @@
     </ion-row>
   </ion-grid>
 
+  <ion-item class="language-select">
+    <ion-label><ion-icon name="globe"></ion-icon> {{ 'misc.setLanguage' | translate }}</ion-label>
+    <ion-select
+      interface="alert"
+      placeholder="Select One"
+      [(ngModel)]="settings.language"
+      (ionChange)="onSetLanguage()"
+      cancelText="{{ 'misc.buttons.cancel' | translate }}"
+      okText="{{ 'misc.buttons.ok' | translate }}">
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="es">Español</ion-select-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>

@@ -1,0 +1,253 @@
+{
+  "emailReport": {
+    "additional": {
+      "label": "Información adicional acerca de la situación sospechosa",
+      "placeholder": "Anote información adicional"
+    },
+    "cars": {
+      "label": "Descripcion de vehiculos",
+      "placeholder": "De todos los vehiculos, anote de que forma estan involucrados y la marca, modelo, color, numero de registro de vehiculo de la secretaria de comunicaciones y transportes, placas, etc."
+    },
+    "checkboxes": {
+      "cars": "¿Hay vehículos involucrados en la actividad sospechosa?",
+      "otherPeople": "¿Ve usted a otras personas (como compradores o tratantes, etc) tomando parte en la actividad sospechosa?",
+      "seenVictim": "¿Ha visto a una persona que usted sospecha es víctima?"
+    },
+    "emailButton": "Envíe su reporte por correo electrónico",
+    "intro": "Para que las autoridades policíacas puedan abrir una investigación con base en la información que usted les dé, necesitarán información clave. Anote lo que sepa sobre el incidente.",
+    "notes": "Si tomó fotos, muéstreselas a las autoridades policíacas.",
+    "otherPeople": {
+      "label": "Descripción de las otras personas",
+      "placeholder": "Describa qué los hace sospechosos y anote su estatura, peso, raza, color de pelo, edad, etc."
+    },
+    "phone": {
+      "label": "Su número de teléfono, para seguimiento por parte de la línea de ayuda",
+      "placeholder": "Número de teléfono"
+    },
+    "resetButton": "Reinicie su reporte",
+    "title": "Envíe un reporte por correo electrónico",
+    "victim": {
+      "appearance": {
+        "label": "Apariencia",
+        "placeholder": "Describa la estatura, peso, raza, color de pelo, color de ojos, edad, etc."
+      },
+      "flagType": {
+        "label": "¿En qué industria trabajas?",
+        "school": "Transporte escolar",
+        "transit": "Transporte público/autobús"
+      },
+      "flags": {
+        "label": "Marque  las señales de advertencia que correspondan",
+        "school": {
+          "absences": "El estudiante está acumulando ausencias frecuentes",
+          "branding": "El estudiante tiene marcas o tatuajes que podrían ser la marca de un proxeneta.",
+          "bruises": "El estudiante tiene moretones, marcas o signos de trauma físico",
+          "differentPerson": "Hay una persona nueva o diferente que deja o recoge al estudiante de la parada del autobús o de la escuela",
+          "dress": "El estudiante está vestido de manera inapropiada para el clima o para la escuela",
+          "emotions": "El estudiante tiene síntomas de ira, pánico, irritabilidad, fobia o hiperactividad que no existían antes",
+          "gadgets": "El estudiante de repente tiene los últimos aparatos, ropa nueva, uñas cuidadas u otras posesiones materiales que un proxeneta puede haberle dado durante un proceso de reclutamiento",
+          "moodSwings": "El estudiante muestra cambios de humor, como llanto frecuente, rabietas o comportamiento pegajoso",
+          "quota": "El estudiante revela que tiene proxeneta y/o está haciendo una cuota"
+        },
+        "transit": {
+          "bruising": "La víctima tiene moretones, marcas o signos de trauma físico",
+          "emotions": "La víctima tiene apariencia descuidada o desaliñada, está sola, con miedo o llorando",
+          "minor": "La víctima es una persona menor de edad que viaja sin supervisión de un adulto",
+          "minorPickUp": "La víctima no conoce a la persona que le va a recoger",
+          "noSpeak": "La comunicación de la víctima ha sido restringida o controlada — no se le permite hablar por sí misma",
+          "offeringSex": "La víctima ofrece sexo a cambio de un aventón, de comida, etc.",
+          "quota": "La víctima reconoce de alguna manera que tiene un padrote o tiene que cumplir con una cuota",
+          "strangerPurchase": "La víctima nunca ha conocido a la persona que le compró el boleto.",
+          "tickets": "La víctima no tiene control de sus documentos propios de identidad (Identificación o pasaporte)"
+        }
+      },
+      "gender": {
+        "female": "Mujer",
+        "label": "Sexo de la víctima",
+        "male": "Hombre",
+        "other": "Otro",
+        "selectOne": "Seleccione uno",
+        "unknown": "Desconocido"
+      },
+      "otherNotes": {
+        "label": "Otras notas",
+        "placeholder": "Escriba aqui notas adicionales"
+      }
+    },
+    "when": {
+      "label": "¿Cuándo ocurrió la actividad sospechosa?"
+    },
+    "where": {
+      "label": "¿Dónde se llevó a cabo la actividad sospechosa?",
+      "placeholder": "Escriba el nombre del lugar y su ubicacion, si corresponde"
+    }
+  },
+  "home": {
+    "contentWarning": "Esta aplicación contiene información sobre la trata de personas y podría ser inapropiada para algunas personas.",
+    "redFlagsSchool": "@:nav.redFlagsSchool",
+    "redFlagsTransit": "@:nav.redFlagsTransit",
+    "reportActivity": "@:report.title",
+    "resources": "@:nav.resources"
+  },
+  "misc": {
+    "buttons": {
+      "cancel": "Cancelar",
+      "close": "Cerrar",
+      "continue": "Continuar",
+      "doNotShow": "No mostrar de nuevo",
+      "no": "No",
+      "ok": "Aceptar",
+      "retry": "Intentar de nuevo",
+      "submit": "Enviar",
+      "yes": "Sí"
+    },
+    "chooseMultiple": "Elija tantas opciones como desee.",
+    "datetime": {
+      "date": "Fecha",
+      "dayNames": "domingo, lunes, martes, miércoles, jueves, viernes, sábado",
+      "dayNamesShort": "do, lu, ma, mi, ju, vi, sa",
+      "monthNames": "enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubure, noviembre, diciembre",
+      "monthNamesShort": "enero, feb, marzo, abr, mayo, jun, jul, agosto, sept, oct, nov, dic",
+      "time": "Hora"
+    },
+    "error": "Error",
+    "messages": {
+      "connectionTip": "Asegúrate de tener conexión a Internet y trata de nuevo.",
+      "dataLoadError": "Hubo un problema al cargar tu cuenta de voluntario.",
+      "dataLoadErrorNetwork": "@:misc.messages.dataLoadError @:misc.messages.connectionTip",
+      "dataLoadErrorUnknown": "@:misc.messages.dataLoadError @:misc.messages.contactStaff",
+      "logoutMessage": "Se cerró tu sesión.",
+      "pleaseWait": "Espera por favor...",
+      "requestError": "Hubo un error al hacer la solicitud.",
+      "requestErrorNetwork": "@:misc.messages.requestError @:misc.messages.connectionTip",
+      "requestErrorUnknown": "@:misc.messages.requestError @:misc.messages.contactStaff"
+    },
+    "setLanguage": "Seleccionar idioma"
+  },
+  "nav": {
+    "home": "Inicio",
+    "redFlags": "Indicadores",
+    "redFlagsSchool": "Transporte escolar",
+    "redFlagsTransit": "Transporte público y autobús",
+    "report": "Reporte",
+    "resources": "Recursos"
+  },
+  "redFlagsCommon": {
+    "caseStudy": "Caso práctico",
+    "example": "Ejemplo",
+    "flagsHeader": "Indicadores de la trata de personas:",
+    "questionsHeader": "Preguntas para hacer:",
+    "questionsIntro": "Muchas veces víctimas de la trata de personas, especialmente los niños, no se identificarán como víctimas o no saben qué es la “trata”. En lugar de preguntarles si están siendo víctimas de trata, pregúnteles:",
+    "survivorStory": "Ejemplo"
+  },
+  "redFlagsSchool": {
+    "examples": {
+      "liz": "<p>“Mi experiencia con la trata de personas comenzó cuando tenía seis años. Desde entonces hasta que tenía 18 años, mi mamá me vendió a los hombres de nuestra comunidad. Al respecto a mi vida escolar, es donde sobresalí. La escuela era el único lugar seguro que tenía. Solía dormir en la biblioteca de la escuela porque no era seguro dormir en casa o no podía dormir porque había hombres en mi habitación por la noche.</p>\n\n<p>Mientras asistía a la escuela primaria y secundaria, tomé un autobús escolar. Era una escuela católica y viajaba el mismo conductor durante toda mi carrera escolar. Creo que él vio cosas que no tenían sentido o que no parecían normales. Mis hematomas, mi cicatrices, diciéndole que era torpe y que me caí de la bicicleta. Él tuvo la oportunidad de observar las idas y venidas de mi casa. ¿Quién estaba allí para subirme al autobús por la mañana y quién para recogerme por la tarde? Solo le diría: 'Oh, mi tío está aquí,’ y bajarme del autobús.</p>\n\n<p>Creo que una de los fortalezas más importantes que tendría un conductor de autobús escolar es la buena relación que puede establecer con los estudiantes que le confían llevarlos del punto A al punto B, y mantenerlos seguros mientras lo hace. Crecer esa buena relación incluye tratar a los estudiantes como seres humanos y notar los detalles normales, y los no tan normales. Si fuera a cien grados afuera, se notaría si un estudiante estuviera vestido con cuello alto y pantalones largos. Y se preguntaría, ¿Qué se esconde debajo del cuello alto? ¿Por qué se viste así?</p>\n\n<p>Realmente creo que el conocimiento marca la diferencia. Si vea algo, puede decir algo. Va a ser ese acto pequeño que cambia todo por un sobreviviente. Si lo único que hace es capacitarse y conocer y comprender que la trata de personas sí ocurre. Mucha gente piensa que la trata es un mito. Estoy aquí para decirte que yo la viví. La sobreviví, y ninguna otra persona debería tener que pasar por esa.”</p>\n\n<p><em>- Liz Williamson, líder de sobrevivientes</em></p>"
+    },
+    "flags": "<ul>\n<li>Estudiantes que han comenzado a acumular ausencias frecuentes.</li>\n<li>Una persona nueva o diferente, probablemente mayor de edad, que deja o recoge a un estudiante del parada de autobús o escuela; esta persona puede demostrar un comportamiento controlador.</li>\n<li>Signos de hematomas, trauma físico o desnutrición.</li>\n<li>Vestimenta inapropiada para el clima o la escuela.</li>\n<li>Síntomas de ira, pánico, irritabilidad, fobia o hiperactividad que no existían antes.</li>\n<li>Cambios de humor, como llanto frecuente, rabietas o comportamiento pegajoso.</li>\n<li>Marcas o tatuajes que podrían ser la marca de un proxeneta.</li>\n<li>Estudiantes que de repente tienen ropa nueva, uñas cuidadas u otras posesiones materiales que un proxeneta les puede dar durante un proceso de arreglo personal.</li>\n<li>Cualquier reconocimiento de que el estudiante tiene un proxeneta y/o un cupo.</li>\n</ul>",
+    "intro": "<p>La trata de personas es la esclavitud de la era moderna. Los tratantes utilizan la fuerza, el fraude y la coerción para controlar a sus víctimas. Toda persona menor de edad que participe en el sexo comercial es víctima de la trata de personas. Ya sea un conductor de autobús escolar, ayudante, monitor o personal de oficina, como miembro de la industria del transporte escolar, tiene la oportunidad de detectar situaciones de trata de personas y salvar una vida.</p>\n\n<p>La trata puede ocurrir en muchos lugares, incluyendo terminales de autobuses, restaurantes, hoteles/moteles, clubes de striptease, casinos, casas, paradas de camiones, paradas de descanso, etc. Se sabe que los tratantes reclutan víctimas en las escuelas, así como en Internet. También se sabe que los niños víctimas de la trata a menudo seguirán asistiendo a la escuela (y viajando en el autobús escolar) mientras son explotados en las noches y los fines de semana.</p>\n\n<p><b>Advertencia: Por favor no se acerque a los tratantes.</b> Permita a las autoridades encargarse de los tratantes y recuperar a las víctimas. El acercarse a los tratantes no solamente es peligroso para usted y las víctimas, sino que podría acarrear dificultades para procesar penalmente a los tratantes.</p>",
+    "post": "Si está preocupado por un estudiante, siga los protocolos de su escuela sobre la denuncia de sospechas de tráfico de niños o sospechas de abuso.",
+    "postLink": "Si no ha visto el video de capacitación de BOTL, puede verlo en",
+    "questions": "<ul>\n<li>¿Alguien te amenaza o te obliga a hacer algo que no quieres hacer?</li>\n<li>¿Alguien te controla a ti, tu dinero o tus pertenencias?</li>\n<li>¿Se siente seguro con la persona que te recoge o te deja?</li>\n<li>¿Está todo bien en casa?</li>\n<li>¿Ha vendido alguna vez sexo por dinero o bienes?</li>\n</ul>",
+    "title": "Indicadores de la trata de personas, para el transporte escolar"
+  },
+  "redFlagsTransit": {
+    "examples": {
+      "california": "<p>No mucho después de que el Metropolitan Transit System (MTS) de San Diego implementara su programa contra la trata de personas, que incluía el video de capacitación de BOTL, su equipo de seguridad notó que un hombre en uno de los centros de tránsito estaba actuando agresivamente hacia una mujer joven. Cuando el mismo hombre regresó más tarde al centro y fue visto acercándose a otras mujeres jóvenes, los oficiales de seguridad con MTS compartieron sus sospechas y pruebas con el Grupo de Trabajo contra la Trata de Personas de San Diego que coordinó con otras agencias en California. La investigación culminó con el arresto del hombre en un motel cerca de Los Ángeles donde él y un cómplice detenían a una joven contra su voluntad.</p>",
+      "newYork": "<p>Un oficial policial en la ciudad de Nueva York fue llamado a la escena por un conductor de autobús quien estaba preocupado por el bienestar de dos adolescentes que encontró en una zona restringida de la terminal de autobuses. Las chicas, que parecían sucias y despeinadas, habían estado rogando para un viaje gratis a Pensilvania y una de las chicas supuestamente le ofreció sexo a un conductor en cambio por un paseo. Después de darles un poco de pizza y pasar un rato hablando con ellas en su oficina, el oficial se enteró de que las niñas eran primas y antes de estar en la calle, vivían con y trabajan para un \"Novio\" y su madre, en una casa que fue utilizada como sala de masajes en la que fueran obligadas a prestar servicios sexuales. Cuando la chica enfrentó a su proxeneta / \"novio\" sobre otra chica con la que se había acostado, la madre echó a las dos chicas, manteniendo control de todo su dinero y pertenencias. El caso fue enviado de inmediato para una mayor investigación, y el oficial llevó a las niñas a un lugar seguro. Después de la investigación, el \"novio\" y su madre fueron arrestados y otras víctimas fueron recuperadas en la casa, incluidos menores de edad.</p>",
+      "ohio": "<p>Un conductor de autobús de Lakefront Lines en Ohio fue acercado por una mujer joven en su autobús quien le dijo que estaba siendo detenida contra su voluntad y forzada a prostituirse por un pasajero masculino en el mismo autobús. El conductor, que había completado recientemente la capacitación de BOTL, notificó al despacho y el equipo de seguridad respondió inmediatamente, coordinándose con la policía para llegar en escena.  Cuando más detalles de las circunstancias fueron revelados, la joven estaba conectada a recursos y el tratante fue arrestado.</p>",
+      "washington": "<p>Una semana después de que una agencia de tránsito en el estado de Washington mostró el video de capacitación de BOTL en una reunión mensual para personal de seguridad, una joven angustiada emocionalmente entró al centro de tránsito. Ella tenía hematomas graves en la cara y abrasiones en todo su cuerpo. Un empleado se acercó a la joven para ver si necesitaba ayuda, y aprendió que ella acababa de salir del hospital después de haber sido golpeada, violada y robada. Ella reveló información que sugería que era víctima de la trata sexual. No sabía en qué ciudad estaba, y no tenía teléfono ni dinero. Había llegado al centro de tránsito con la intención de viajar a reunirse con un amigo seguro. El empleado la ayudó a comunicarse con el amigo y le consiguió un boleto de autobús. Entonces el empleado y sus colegas juntaron el efectivo que tenían en sus propias billeteras para asegurarse de que la joven tuviera algo de dinero mientras viajaba.</p>"
+    },
+    "flags": {
+      "1": "<ul>\n<li>Comunicación restringida o controlada, no se le permite hablar por sí misma.</li>\n<li>Pasajeros cuyos boletos o documentos de identificación están controlados por otra persona.</li>\n<li>Cualquier mención de que tiene un proxeneta y/o está cumpliendo con una cuota.</li>\n</ul>",
+      "2": "<ul>\n<li>Menores de edad que viajan sin supervisión de adultos.</li>\n<li>Menores de edad que no conocen a la persona que les va a recoger.</li>\n<li>Pasajeros que nunca han conocido a la persona que les compró el boleto.</li>\n<li>Signos de hematomas, marcado de proxeneta, o trauma físico.</li>\n</ul>",
+      "3": "<ul>\n<li>Apariencia descuidada, desaliñada, sola, asustada o llorando.</li>\n<li>Automóviles que se encuentran con frecuencia en la terminal pero nadie sale para abordar un autobús.</li>\n<li>Personas en la terminal que se acercan regularmente a personas que parecen vulnerables, especialmente si nunca suben a un autobús.</li>\n</ul>",
+      "4": "<ul>\n<li>Cualquier persona que ofrece intercambiar sexo por un aventón, comida, etc.</li>\n</ul>"
+    },
+    "intro": "<p>La trata de personas es la esclavitud de la era moderna. Los tratantes utilizan la fuerza, el fraude y la coerción para controlar a sus víctimas. Toda persona menor de edad que participe en el sexo comercial es víctima de la trata de personas.Ya sea que venda boletos o sea seguridad de tránsito, mantenga autobuses o conduzca, como miembro de la industria de autobuses, tiene la oportunidad de detectar situaciones de trata de personas y salvar una vida.</p>\n\n<p>La trata puede ocurrir en muchos lugares, incluyendo terminales de autobuses, restaurantes, hoteles/moteles, clubes de striptease, casinos, casas, paradas de camiones, paradas de descanso, etc. Los tratantes reclutan víctimas en Internet y en varios lugares físicos, incluso en paradas de autobús, estaciones de autobús y escuelas. Se sabe que los tratantes transportan a sus víctimas en autobuses durante su explotación. Y, cuando las víctimas pueden salir, un autobús o una terminal puede ser el primer lugar al que irán para encontrar seguridad.</p>\n\n<p><b>Advertencia: Por favor no se acerque a los tratantes.</b> Permita a las autoridades encargarse de los tratantes y recuperar a las víctimas. El acercarse a los tratantes no solamente es peligroso para usted y las víctimas, sino que podría acarrear dificultades para procesar penalmente a los tratantes.</p>",
+    "postLink": "Si no ha visto el video de capacitación de BOTL, puede verlo en",
+    "questions": "<ul>\n<li>¿Te sientes segura con la persona con quien estás viajando?</li>\n<li>¿Alguien te está haciendo daño?</li>\n<li>¿Eres libre de ir y venir a voluntad?</li>\n<li>¿Conoces a la persona que te va a recoger?</li>\n<li>¿Tus padres, hermanos, parientes saben dónde estás? Si no, ¿por qué no?</li>\n<li>¿ Están siendo tú o tu familia amenazados? ¿Cuál es la naturaleza de las amenazas?</li>\n</ul>",
+    "title": "Indicadores de la trata de personas, para el transporte público y autobús"
+  },
+  "report": {
+    "USA": "EE.UU.",
+    "callCanadaHotline": "Llame a la línea de ayuda de Canadá",
+    "callHotline": "Llame a la línea de ayuda",
+    "callMexicoHotline": "Llame a la línea de ayuda de México",
+    "emailBtn": "Reporte por correo electrónico",
+    "emailBtnHint": "Es mucho más recomendable que usted haga una llamada",
+    "intro": "<p><b>Inmediatamente:</b> Si usted ve que se está cometiendo un delito, llame al 911 y luego llame a la línea de ayuda. Si usted es un conductor de autobús escolar y está preocupado por un estudiante, siga los protocolos de su escuela sobre la denuncia de sospechas de tráfico de niños o sospechas de abuso.</p><p>Los operadores de la línea de ayuda contra la trata de personas están disponibles las 24 horas del día, los 7 días de la semana, para tomar reportes de posibles casos de trata de personas. Todos los reportes son confidenciales y usted puede permanecer anónimo. Se cuenta con intérpretes de idiomas. La información que usted proporcione será revisada por la línea de ayuda nacional y se enviará a autorizadas policíacas especializadas y/o a proveedores de servicios cuando sea adecuado.</p>",
+    "textBtn": "Envíe un texto que diga INFO o HELP (Información o ayuda)",
+    "textTo": "a {{phoneNumber}}",
+    "title": "Reporte la Actividad",
+    "whatToReportBtn": "Qué reportar"
+  },
+  "resources": {
+    "about": {
+      "annualReportLink": {
+        "1": "Conozca el impacto que TAT y nuestros colaboradores hicieron en el {{year}} por medio de nuestro",
+        "2": "Reporte Anual"
+      },
+      "credits": "Esta aplicación fue creada por Ransom Christofferson y Alexander Ramsey Creative LLC.",
+      "intro": "<p>Busing on the Lookout (BOTL) es un programa de Truckers Against Trafficking (TAT), una organización no lucrativa cuya misión es educar, preparar y movilizar a los miembros de las industrias de camiones, autobuses y energía para combatir la trata de personas en su trabajo diario.</p>\n\n<p><strong>Nuestras tres objetivos son:</strong></p>\n<ul>\n  <li>Saturar a la industria autobús con materiales de BOTL.</li>\n  <li>Colaborar con las autoridades y las agencias gubernamentales para facilitar la investigación de la trata de personas.</li>\n  <li>Movilizar los recursos de nuestros colaboradores para combatir este delito.</li>\n</ul>",
+      "supportLink": {
+        "1": "Para apoyo comuníquese:"
+      },
+      "tatLink": {
+        "1": "Conozca más sobre TAT y nuestros programas en nuestra",
+        "2": "página de internet"
+      },
+      "title": "Sobre Busing on the Lookout"
+    },
+    "books": {
+      "by": "de",
+      "documentaries": "Documentales recomendados",
+      "or": "o",
+      "subtitle": "con sus títulos en inglés",
+      "title": "@:resources.btns.recommendedBooks"
+    },
+    "btns": {
+      "aboutBotl": "Sobre BOTL",
+      "humanTraffickingLaws": "Leyes Sobre la Trata de Personas",
+      "podcasts": "Podcasts",
+      "recommendedBooks": "Libros Recomendados",
+      "videos": "Videos"
+    },
+    "intro": "Use los siguientes recursos para aprender más sobre la trata de personas y cómo usted puede ayudar a combatirla.",
+    "laws": {
+      "bullets": "<ul>\n<li>Los 50 estados de EEUU y el Distrito de Columbia tienen una nueva ley que penaliza la trata de personas para explotación sexual.</li>\n<li>31 estados tienen una ley contra la trata que se impone a los compradores, la cual prohíbe la defensa con base en error en la edad en los juicios por comprar un acto sexual de una persona menor de 18 años de edad.</li>\n<li>Algunos estados castigan a los compradores de sexo de la misma forma que a los tratantes, generalmente con delitos de carácter grave.</li>\n<li>Washington identifica a cualquier persona que compre un acto sexual explícito como tratante de personas culpable de un delito grave tipo A.</li>\n<li>Hay una prohibición de por vida para obtener licencia de conducir comercia para la persona que use su vehículo comercial en la comisión de un delito grave que conlleve una forma grave de trata de personas.</li>\n</ul>",
+      "intro": "¿Sabía usted que…?",
+      "intro2": "La trata de personas es el reclutamiento, transporte, transferencia, alojamiento u obtención de personas por medio de la fuerza, el fraude y la coerción con fines de explotación.",
+      "linkText": "¿Desea saber más acerca de las leyes contra la trata de personas en los Estados Unidos?",
+      "title": "@:resources.btns.humanTraffickingLaws"
+    },
+    "podcasts": {
+      "listen": "Escucha ahora",
+      "title": "@:resources.btns.podcasts"
+    },
+    "title": "@:nav.resources",
+    "videos": {
+      "title": "@:resources.btns.videos",
+      "video1": {
+        "description": "<p>Escuche lo que dicen las autoridades, un sobreviviente de la trata y los miembros de la industria autobús (comercial, de tránsito y escolar) sobre el papel que la industria puede tomar en la lucha contra la trata de personas.</p>",
+        "title": "Video de capacitación de BOTL"
+      },
+      "video3": {
+        "description": "<p>Truckers Against Trafficking presenta esta capacitación sobre la trata de personas e información sobre como los autoridades pueden investigar y procesar judicialmente este delito.</p><p>Gracias a nuestros patrocinadores Help Inc. y Vigilant Solutions y a nuestros colaboradores de iEmpathize por ayudar a hacer posible este video.</p>",
+        "title": "Capacitación de TAT con la participación de las autoridades policiacas"
+      }
+    }
+  },
+  "whatToReport": {
+    "cars": "Vehículos",
+    "carsText": "¿Hay vehículos involucrados en la actividad de los sospechosos? Anote la marca, el modelo, el color, el número de registro de vehiculo de la secretaria de comunicaciones y transportes, el número de placas, etc.",
+    "dateTime": "Fecha y hora",
+    "dateTimeText": "¿Cuándo sucedió la actividad sospechosa? ¿Qué día y a qué hora?",
+    "intro": "Para que las autoridades policiacas abran una investigación en relación con su reporte, necesitan información con base en la cual puedan actuar. Esta información incluiría:",
+    "location": "Ubicación",
+    "locationText": "¿Dónde se llevó a cabo la actividad sospechosa? ¿Tiene usted una dirección? Sea tan especifico como pueda.",
+    "people": "Personas",
+    "peopleText": "¿Quién está involucrado en la actividad? Tome nota de la estatura, peso, color de cabello, color de ojos, edad, etc. Tome una foto si puede para mostrarle a las autoridades cuando llegue al lugar de los hechos.",
+    "title": "@:report.whatToReportBtn"
+  }
+}
