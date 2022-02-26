@@ -15,7 +15,9 @@
     "start-android": "ionic cordova run android",
     "start-android-live": "ionic cordova run android -l",
     "build-apk": "ionic cordova build android --release --prod",
-    "build-ios": "ionic cordova prepare ios --release --prod && open ./platforms/ios/Busing\\ on\\ the\\ Lookout.xcodeproj"
+    "zip-apk": "zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk",
+    "sign-apk": "apksigner sign --ks ./botl.keystore --verbose ./app-release.apk",
+    "build-ios": "ionic cordova prepare ios --release --prod && open ./platforms/ios/Busing\\ on\\ the\\ Lookout.xcworkspace/"
   },
   "private": true,
   "dependencies": {
