@@ -25,6 +25,7 @@ import { Dialogs } from '@ionic-native/dialogs/ngx';
 import { Sim } from '@ionic-native/sim/ngx';
 import { Network } from '@ionic-native/network/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
 // app
@@ -78,7 +79,7 @@ import { RedFlagsPopover } from './tabs/popovers/red-flags/red-flags.popover';
     TabsPageModule
   ],
   providers: [
-    StatusBar, SplashScreen, Dialogs, Network, AndroidPermissions, Sim,
+    StatusBar, SplashScreen, Dialogs, Network, AndroidPermissions, Sim, Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

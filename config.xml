@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="2022022301" id="org.truckersagainsttrafficking.busingonthelookout.walletcard" ios-CFBundleVersion="20220223.001" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2023072901" id="org.truckersagainsttrafficking.busingonthelookout.walletcard" ios-CFBundleVersion="20230729.001" version="2.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Busing on the Lookout</name>
     <description>Make the call, save lives. Use this simple app to help you identify and report instances of human trafficking.</description>
     <author email="appdev@truckersagainsttrafficking.org" href="http://www.truckersagainsttrafficking.org/">Truckers Against Trafficking</author>
@@ -22,7 +22,6 @@
     <allow-intent href="maps:*" />
     <preference name="loadUrlTimeoutValue" value="40000" />
     <preference name="ScrollEnabled" value="false" />
-    <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ShowSplashScreen" value="true" />
     <preference name="AutoHideSplashScreen" value="false" />
@@ -42,6 +41,10 @@
         <comment>Some HTTP calls are needed</comment>
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
+        </edit-config>
+        <comment>Android API 31+ requires explicit declaration of `android:exported` on tags that contain intent-filter tags (which previously defaulted to the value "true")</comment>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
+            <activity android:exported="true" />
         </edit-config>
         <comment>Colors and misc xml</comment>
         <source-file src="resources/android/colors/drawable/" target="app/src/main/res" />
@@ -78,11 +81,14 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
         <preference name="android-minSdkVersion" value="19" />
-        <preference name="android-targetSdkVersion" value="30" />
+        <preference name="android-targetSdkVersion" value="31" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+            <string>The app uses your location to determine which country's trafficking hotline to use.</string>
+        </edit-config>
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
@@ -146,7 +152,6 @@
     <plugin name="cordova-plugin-buildinfo" spec="^2.0.2" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-    <plugin name="cordova-sqlite-storage" spec="^3.0.0" />
     <engine name="ios" spec="5.0.0" />
     <engine name="android" spec="8.1.0" />
     <engine name="browser" spec="5.0.4" />

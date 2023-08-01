@@ -11,6 +11,11 @@ import { Storage } from '@ionic/storage';
 export class SettingsService {
 
   public language: 'en' | 'es';
+  public location: {
+    countryCode: string;
+    stateCode: string;
+    savedTime: Date;
+  };
 
   private isReady: boolean = false;
   
@@ -28,6 +33,11 @@ export class SettingsService {
       if ( defaultLang !== 'en' && defaultLang !== 'es' ) defaultLang = 'es';
 
       this.language = defaultLang,
+      this.location = {
+        countryCode: null,
+        stateCode: null,
+        savedTime: null
+      };
 
       this.saveSettings();
     }
@@ -50,7 +60,8 @@ export class SettingsService {
   async saveSettings() {
     // save to storage
     return this.storage.set( this.settingsStorageKey, {
-      language: this.language
+      language: this.language,
+      location: this.location
     });
   }
 
@@ -60,6 +71,7 @@ export class SettingsService {
     if ( settings ) {
       // apply settings
       this.language = settings.language;
+      this.location = settings.location;
     }
     return !!settings;
   }

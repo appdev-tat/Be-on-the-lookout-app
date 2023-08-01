@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 import { Sim } from '@ionic-native/sim/ngx';
+import { Device } from '@ionic-native/device/ngx';
+import { AlertController } from '@ionic/angular';
 import { WhatToReportComponent } from '../../modals';
-import { ModalService, MiscService } from '../../services';
+import { ModalService, MiscService, TrxService } from '../../services';
 import { SurveyComponent } from '../../modals';
 import { ISurvey, ISurveyField, SurveyFieldType } from '../../models/survey';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { GeocoderService } from '../../services/geocoder.service';
+
+interface ILocation { countryCode: string; stateCode: string };
 
 @Component({
   selector: 'app-report',
@@ -16,20 +22,76 @@ export class ReportPage {
   hasSim = false;
   redFlagOptions: ISurveyField['options'];
 
+  location: ILocation = { countryCode: null, stateCode: null };
+  locationFetched = false;
+
+  location$ = new BehaviorSubject<ILocation>( { countryCode: null, stateCode: null } );
+  locationSubscription: Subscription;
+
   constructor(
     public modalService: ModalService,
     public miscService: MiscService,
-    private sim: Sim
+    public alertController: AlertController,
+    public device: Device,
+    private sim: Sim,
+    private geocoder: GeocoderService,
+    private trxService: TrxService
   ) {
     this.sim.getSimInfo()
     .then( simData => this.hasSim = simData != null && !!simData.carrierName )
     .catch( e => this.hasSim = false );
+
+    // get the user's current country and state
+    this.getLocation();
   }
 
   private _yesNoOptions = [
     { value: 'yes', labelTranslationKey: 'misc.buttons.yes' },
     { value: 'no', labelTranslationKey: 'misc.buttons.no' }
   ];
+
+  async getLocation() {
+    this.locationFetched = false;
+
+    const alert = await this.alertController.create({
+      backdropDismiss: false,
+      cssClass: 'loading-location-alert',
+      message: '<ion-spinner class="sc-ion-loading-md md spinner-crescent hydrated" role="progressbar"></ion-spinner> ' +
+        ( await this.trxService.t('report.gettingLocation') ) +
+        '<br><br>' +
+        ( await this.trxService.t('report.gettingLocationWhy') ),
+      buttons: [{
+        text: await this.trxService.t( 'misc.buttons.cancel' ),
+        role: 'cancel',
+        handler: () => {
+          // cancel the location fetch.
+          this.locationSubscription.unsubscribe();
+          this.locationFetched = true;
+          alert.dismiss();
+        }
+      }]
+    });
+
+    // if the location has been fetched recently, it will take a very short time, resulting in the alert showing for a split second.
+    // Avoid this by waiting to show the alert.
+    setTimeout( () => {
+      if ( !this.locationFetched ) {
+        alert.present();
+      }
+    }, 250 );
+
+    this.locationSubscription = this.location$.subscribe( location => {
+      this.location = location;
+    });
+
+    this.geocoder.getLocation().then( location => {
+      if ( !this.locationFetched ) {
+        this.location$.next( location );
+        this.locationFetched = true;
+        alert.dismiss();
+      }
+    });
+  }
 
   openEmailReportSurvey() {
     let survey: ISurvey = {
@@ -258,5 +320,11 @@ export class ReportPage {
       onSuccess: () => {}
     });
 
+  }
+
+  openLocationSettings() {
+    if ( window.cordova && window.cordova.plugins['settings'] ) {
+      window.cordova.plugins['settings'].open( 'application_details', () => {}, () => {} );
+    }
   }
 }

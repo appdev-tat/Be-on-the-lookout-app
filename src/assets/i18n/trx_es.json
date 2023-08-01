@@ -170,13 +170,18 @@
     "title": "Indicadores de la trata de personas, para el transporte público y autobús"
   },
   "report": {
+    "CAN": "CAN",
+    "MEX": "MÉX",
     "USA": "EE.UU.",
-    "callCanadaHotline": "Llame a la línea de ayuda de Canadá",
+    "USA-NJ": "Nueva Jersey",
     "callHotline": "Llame a la línea de ayuda",
-    "callMexicoHotline": "Llame a la línea de ayuda de México",
     "emailBtn": "Reporte por correo electrónico",
     "emailBtnHint": "Es mucho más recomendable que usted haga una llamada",
+    "gettingLocation": "Determinando su ubicación...",
+    "gettingLocationWhy": "Usamos su ubicación para mostrarle los números de teléfono para la línea directa correcta.",
     "intro": "<p><b>Inmediatamente:</b> Si usted ve que se está cometiendo un delito, llame al 911 y luego llame a la línea de ayuda. Si usted es un conductor de autobús escolar y está preocupado por un estudiante, siga los protocolos de su escuela sobre la denuncia de sospechas de tráfico de niños o sospechas de abuso.</p><p>Los operadores de la línea de ayuda contra la trata de personas están disponibles las 24 horas del día, los 7 días de la semana, para tomar reportes de posibles casos de trata de personas. Todos los reportes son confidenciales y usted puede permanecer anónimo. Se cuenta con intérpretes de idiomas. La información que usted proporcione será revisada por la línea de ayuda nacional y se enviará a autorizadas policíacas especializadas y/o a proveedores de servicios cuando sea adecuado.</p>",
+    "locationError": "No se puede determinar su ubicación.",
+    "openSettings": "Configuración",
     "textBtn": "Envíe un texto que diga INFO o HELP (Información o ayuda)",
     "textTo": "a {{phoneNumber}}",
     "title": "Reporte la Actividad",
@@ -190,6 +195,7 @@
       },
       "credits": "Esta aplicación fue creada por Ransom Christofferson y Alexander Ramsey Creative LLC.",
       "intro": "<p>Busing on the Lookout (BOTL) es un programa de Truckers Against Trafficking (TAT), una organización no lucrativa cuya misión es educar, preparar y movilizar a los miembros de las industrias de camiones, autobuses y energía para combatir la trata de personas en su trabajo diario.</p>\n\n<p><strong>Nuestras tres objetivos son:</strong></p>\n<ul>\n  <li>Saturar a la industria autobús con materiales de BOTL.</li>\n  <li>Colaborar con las autoridades y las agencias gubernamentales para facilitar la investigación de la trata de personas.</li>\n  <li>Movilizar los recursos de nuestros colaboradores para combatir este delito.</li>\n</ul>",
+      "privacyPolicy": "Política de Privacidad",
       "supportLink": {
         "1": "Para apoyo comuníquese:"
       },

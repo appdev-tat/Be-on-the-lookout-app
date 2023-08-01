@@ -171,13 +171,18 @@
     "title": "@:nav.redFlagsTransit"
   },
   "report": {
+    "CAN": "CAN",
+    "MEX": "MEX",
     "USA": "USA",
-    "callCanadaHotline": "Call Canada Hotline",
+    "USA-NJ": "New Jersey",
     "callHotline": "Call Hotline",
-    "callMexicoHotline": "Call Mexico Hotline",
     "emailBtn": "Email Report",
     "emailBtnHint": "A phone call is strongly preferred",
+    "gettingLocation": "Getting your location...",
+    "gettingLocationWhy": "We use your location to show you the correct hotline phone numbers.",
     "intro": "<p><b>Immediately:</b> If you’re watching a crime in progress, call 911 and then call the hotline. If you are a school bus driver and concerned about a student, be sure to follow your school’s protocols on reporting suspected child trafficking or suspicions of abuse.</p><p>Anti-trafficking hotline advocates are available 24/7 to take reports of potential human trafficking. All reports are confidential, and you may remain anonymous. Interpreters are available. The information you provide will be reviewed by the National Hotline and forwarded to specialized law enforcement and/or service providers where appropriate.</p>",
+    "locationError": "Could not determine your location.",
+    "openSettings": "Open settings",
     "textBtn": "Text INFO or HELP",
     "textTo": "to {{phoneNumber}}",
     "title": "Report Activity",
@@ -191,6 +196,7 @@
       },
       "credits": "This app was developed by Ransom Christofferson and designed by Alexander Ramsey Creative LLC.",
       "intro": "<p>Busing on the Lookout (BOTL) is a program of Truckers Against Trafficking (TAT), a 501(c)3 organization that exists to educate, equip, empower and mobilize members of the trucking, bus and energy industries to combat human trafficking.</p>\n\n<p><strong>Our three goals are:</strong></p>\n<ul>\n  <li>Saturate the bus industry with BOTL materials.</li>\n  <li>Partner with law enforcement and government agencies to facilitate the investigation of human trafficking.</li>\n  <li>Marshal the resources of our partners to combat this crime.</li>\n</ul>",
+      "privacyPolicy": "Privacy Policy",
       "supportLink": {
         "1": "For support, contact:"
       },
